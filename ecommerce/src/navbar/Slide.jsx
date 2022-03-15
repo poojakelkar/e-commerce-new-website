@@ -1,13 +1,35 @@
 import { ArrowLeftOutlined,ArrowRightOutlined } from "@material-ui/icons"
 import styled from "styled-components"
+import myImage from './dress.png'
 
 const Container= styled.div`
     height: 100vh;
     width: 100%;
     display: flex;
-    background-color: coral;
     position: relative;
 `;
+
+const Wrap = styled.div`
+    height: 100vh;
+`
+const Sliding = styled.div`
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items:center;
+`
+const ImgSliding = styled.div`
+    height: 100%;
+    flex:1 
+`
+const Image = styled.img`
+    height: 100%;
+`
+
+const TextSliding = styled.div`
+    flex:1
+`
+
 const Arrow = styled.div`
     width: 50px;
     height: 50px;
@@ -22,6 +44,8 @@ const Arrow = styled.div`
     margin: auto;
     left: ${props=> props.direction==="left" && "10px"};
     right: ${props => props.direction ==="right" && "10px"};
+    cursor: pointer;
+    opacity: 0.5;
 `
 
 export const Slide = () => {
@@ -31,6 +55,15 @@ export const Slide = () => {
             <ArrowLeftOutlined>
             </ArrowLeftOutlined>
         </Arrow>
+        <Wrap>
+            <Sliding>
+                <ImgSliding>
+                    <Image src={myImage}></Image>
+                </ImgSliding>
+                <TextSliding>
+                </TextSliding>
+            </Sliding>
+        </Wrap>
         <Arrow direction="right">
             <ArrowRightOutlined>
             </ArrowRightOutlined>
