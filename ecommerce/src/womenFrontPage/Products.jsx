@@ -12,6 +12,7 @@ const Heading = styled.div`
     display: flex;
     align-items:center;
     justify-content: center;
+    transition: all 0.8s ease;
 `
 const Container = styled.div`
     flex:1;
@@ -25,7 +26,7 @@ const Container = styled.div`
      
     &:hover ${Heading}{
         opacity: 1;
-        transition: all 0.8s ease;
+        
     }
 `
 const Image = styled.img`
