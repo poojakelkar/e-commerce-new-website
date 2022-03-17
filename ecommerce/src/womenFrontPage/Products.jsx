@@ -2,22 +2,8 @@ import {FavoriteBorderOutlined, SearchOutlined, ShoppingCartOutlined } from '@ma
 import React from 'react'
 import styled from 'styled-components'
 
-const Container = styled.div`
-    flex:1;
-    margin: 10px;
-    min-width: 280px;
-    height: 350px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-`
-const Image = styled.img`
-    height: 70%;
-    width: 100%;
-    object-fit: cover;
-`
 const Heading = styled.div`
+    opacity: 0;
     width: 100%;
     height: 100%;
     position: absolute;
@@ -27,6 +13,27 @@ const Heading = styled.div`
     align-items:center;
     justify-content: center;
 `
+const Container = styled.div`
+    flex:1;
+    margin: 10px;
+    min-width: 280px;
+    height: 350px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+     
+    &:hover ${Heading}{
+        opacity: 1;
+        transition: all 0.8s ease;
+    }
+`
+const Image = styled.img`
+    height: 70%;
+    width: 100%;
+    object-fit: cover;
+`
+
 const Icon = styled.div`
     margin: 8px;
     width: 40px;
