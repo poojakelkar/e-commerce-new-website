@@ -22,8 +22,19 @@ const TextHead = styled.div`
     align-items: center;
     justify-content: center;
 `;
-const Heading = styled.h1``;
-const Button = styled.button``;
+const Heading = styled.h1`
+    color: white;
+    margin-bottom: 20px;
+`;
+const Button = styled.button`
+    padding: 10px;
+    font-size: 18px;
+    font-weight: 600;
+    background-color: teal;
+    color: white;
+    border: none;
+    cursor:pointer
+`;
 
 
 export const WomenCatItem = ({item}) => {
