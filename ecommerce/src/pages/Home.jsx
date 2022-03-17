@@ -3,6 +3,7 @@ import { Announce } from '../womenFrontPage/Announce'
 import { Category } from '../womenFrontPage/Category'
 import { Nav } from '../womenFrontPage/Nav'
 import { Slide } from '../womenFrontPage/Slide'
+import { WomenProducts } from '../womenFrontPage/WomenProducts'
 
 
 export default function Home() {
@@ -12,6 +13,7 @@ export default function Home() {
         <Nav></Nav>
         <Slide></Slide>
         <Category></Category>
+        <WomenProducts></WomenProducts>
     </div>
   )
 }

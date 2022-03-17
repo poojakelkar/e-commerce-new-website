@@ -12,7 +12,7 @@ export const Category = () => {
     return (
         <Container>
             {womenItem.map(item=>(
-                <WomenCatItem item={item}></WomenCatItem>
+                <WomenCatItem item={item} key={item.id}></WomenCatItem>
             ))}
         </Container>
       )

@@ -97,7 +97,7 @@ export const Slide = () => {
         </Arrow>
         <Wrap slider={slider}>
             {slideItem.map(item=>(
-                <Sliding bg={item.bg}>
+                <Sliding bg={item.bg} key={item.id}>
                 <ImgSliding>
                     <Image src={item.img}></Image>
                 </ImgSliding>
