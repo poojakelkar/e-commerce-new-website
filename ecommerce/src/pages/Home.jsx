@@ -1,7 +1,9 @@
 import React from 'react'
-import { Announce } from '../navbar/Announce'
-import { Nav } from '../navbar/Nav'
-import { Slide } from '../navbar/Slide'
+import { Announce } from '../womenFrontPage/Announce'
+import { Category } from '../womenFrontPage/Category'
+import { Nav } from '../womenFrontPage/Nav'
+import { Slide } from '../womenFrontPage/Slide'
+
 
 export default function Home() {
   return (
@@ -9,7 +11,7 @@ export default function Home() {
          <Announce></Announce>
         <Nav></Nav>
         <Slide></Slide>
-       
+        <Category></Category>
     </div>
   )
 }
