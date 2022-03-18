@@ -5,18 +5,24 @@ import { Products } from './Products'
 
 const Container = styled.div`
     display: flex;
-    padding: 20px;
+    padding: 0px 20px;
     justify-content: space-between;
     flex-wrap: wrap;
+`
+const Head = styled.h1`
+    display: flex;
+    padding: 30px 0px 0px 30px;
 `
 
 export const WomenProducts = () => {
   return (
-    <Container>
-        
-        {product.map(item =>(
-            <Products item={item} key={item.id}></Products>
-        ))}
-    </Container>
+    <div>
+        <Head>WOMEN CATEGORY</Head>
+        <Container>
+            {product.map(item =>(
+                <Products item={item} key={item.id}></Products>
+            ))}
+        </Container>
+    </div>
   )
 }

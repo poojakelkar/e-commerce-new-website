@@ -16,7 +16,7 @@ const Heading = styled.div`
 `
 const Container = styled.div`
     flex:1;
-    margin: 10px;
+    margin: 0px 10px;
     min-width: 280px;
     height: 350px;
     display: flex;
@@ -69,5 +69,5 @@ export const Products = ({item}) => {
                 </Icon>
             </Heading>
         </Container>
-  )
+      )
 }
