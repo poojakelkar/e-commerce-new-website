@@ -57,6 +57,10 @@ const ShopNowBtn = styled.button`
     font-weight: 500;
     font-size: 18px;
     border: none;
+
+    &: hover{
+        background-color: #66B2B2;
+    }
 `
 
 const Arrow = styled.div`

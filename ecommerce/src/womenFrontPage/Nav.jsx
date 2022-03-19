@@ -32,7 +32,7 @@ const Input = styled.input`
     border: none;
 `
 
-const Center  =styled.div`
+const Center  = styled.div`
     flex: 1;
     text-align: center;
 `

@@ -33,7 +33,11 @@ const Button = styled.button`
     background-color: teal;
     color: white;
     border: none;
-    cursor:pointer
+    cursor:pointer;
+
+    &: hover{
+        background-color: #66B2B2;
+    }
 `;
 
 
