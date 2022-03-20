@@ -25,6 +25,7 @@ const InfoContainer = styled.div`
 `
 const Title = styled.h1`
   font-weight: 400;
+  letter-spacing: 1.5px;
 `
 const Info = styled.p`
   width: 90%;

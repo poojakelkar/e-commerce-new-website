@@ -1,10 +1,10 @@
 //import Home from "./pages/Home";
 //import { ProductItems } from "./pages/ProductItems";
 
-import { SingleProduct } from "./pages/SingleProduct";
+//import { SingleProduct } from "./pages/SingleProduct";
+import { Register} from "./pages/Register";
 
 const App = ()=>{
-    return <SingleProduct></SingleProduct>
+    return <Register></Register>
 }
-
 export default App;
