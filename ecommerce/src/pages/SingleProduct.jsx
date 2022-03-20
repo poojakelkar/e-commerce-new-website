@@ -28,7 +28,7 @@ const Title = styled.h1`
 `
 const Info = styled.p`
   width: 90%;
-  margin: 20px 0px;
+  margin: 30px 0px;
   font-size: 18px;
   font-weight: 400;
   letter-spacing: 1.5px;
@@ -45,11 +45,13 @@ const ColorFilter = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
+  margin: 20px 0px;
 `
 const ColorTitle = styled.span`
   font-size: 22px;
   font-weight: 500;
   letter-spacing: 1.5px;
+  margin: 10px 0px;
 `
 const Color = styled.div`
   width: 30px;
@@ -67,21 +69,44 @@ const ProductSize = styled.option`
   font-size: 16px;
 `
 const AddContainer = styled.div`
+  display: flex;
+  margin: 40px 0px;
 `
 const AmountContainer = styled.div`
-  font-size: 30px;
   display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  font-weight: 600;
 `
 const Sub = styled.span`
-  padding: 10px;
+  margin: 0px 20px 0px 0px;
 `
 const Amount = styled.span`
-  padding: 10px;
+  margin: 0px 20px 0px 0px;
+  width: 30px;
+  height: 30px;
+  border-radius: 10px;
+  border: 1px solid teal;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 `
 const Add = styled.span`
-  padding: 10px;
 `
-const AddToCart = styled.button``
+const AddToCart = styled.button`
+  margin-left: 30px;
+  background-color: teal;
+  color: white;
+  font-size: 18px;
+  font-weight: 500;
+  border: none;
+  padding: 10px;
+
+  &: hover{
+    background-color: #66B2B2;
+  }
+`
 
 
 export const SingleProduct = () => {
