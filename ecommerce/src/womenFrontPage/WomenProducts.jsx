@@ -11,7 +11,8 @@ const Container = styled.div`
 `
 const Head = styled.h1`
     display: flex;
-    padding: 30px 0px 0px 30px;
+    margin: 20px 0px 0px 20px;
+    font-size: 20px;
 `
 
 export const WomenProducts = () => {
