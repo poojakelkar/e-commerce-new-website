@@ -1,5 +1,5 @@
-import styled from "styled-components"
-
+import React from 'react';
+import styled from "styled-components";
 
 const Container = styled.div`
     background:linear-gradient(rgba(255,255,255,0.5),rgba(255,255,255,0.5)), url("https://images.pexels.com/photos/428338/pexels-photo-428338.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940") center;
@@ -10,9 +10,8 @@ const Container = styled.div`
     justify-content: center;
 `
 const Wrapper = styled.div`
-    width: 40%;
-    height: 50%;
-    padding: 30px;
+    width: 25%;
+    padding: 20px;
     background-color: white;
     border: 1px solid teal;
 `
@@ -20,27 +19,25 @@ const Heading = styled.h1`
     font-size: 22px;
     font-weight: 300;
     text-align: center;
+    letter-spacing: 1.5px;
 `
 const Form = styled.form`
     display: flex;
-    flex-wrap: wrap;
-`
+    flex-wrap: wrap;  
+`;
 const Input = styled.input`
     font-size: 16px;
     font-weight: 400;
     min-width: 40%;
-    padding: 8px 1px;
+    padding: 10px;
     flex: 1;
-    margin: 20px 20px;
+    margin: 20px 10px 0px 0px;
 `
-const Agree = styled.span`
-    font-size: 18px;
-    margin: 10px 20px;
-`
+
 const Button = styled.button`
     width: 40%;
     padding: 15px 20px;
-    margin: 5px 20px ;
+    margin: 20px 10px 0px 0px;
     background-color: teal;
     border: none;
     color: white;
@@ -52,25 +49,27 @@ const Button = styled.button`
         background-color: #66B2B2;
     }
 `
-
+const Link = styled.a`
+    margin: 20px 80px 0px 0px;
+    font-size: 16px;
+    cursor: pointer;
+`
 
 export const Login = () => {
   return (
     <Container>
         <Wrapper>
-            <Heading>CREATE AN ACCOUNT</Heading>
+            <Heading>LOGIN</Heading>
 
             <Form>
-                <Input placeholder='name'></Input>
-                <Input placeholder='Last Name'></Input>
                 <Input placeholder='Username'></Input>
-                <Input placeholder='Email'></Input>
-                <Input placeholder='Password'></Input>
-                <Input placeholder='Confirm Password'></Input>
-                <Agree>I am accepting all the terms and condition</Agree>    
+                <Input placeholder='Password'></Input>   
+                <Link>REMEMBER ME!</Link> 
+                <Link>CREATE NEW ACCOUNT</Link>
             </Form>
             <Button>Sign Up</Button>
         </Wrapper>
+       
     </Container>
   )
 }

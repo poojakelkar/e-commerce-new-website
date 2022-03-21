@@ -20,6 +20,7 @@ const Heading = styled.h1`
     font-size: 22px;
     font-weight: 300;
     text-align: center;
+    letter-spacing: 1.5px;
 `
 const Form = styled.form`
     display: flex;
