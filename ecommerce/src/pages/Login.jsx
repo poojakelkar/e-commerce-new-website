@@ -50,9 +50,11 @@ const Button = styled.button`
     }
 `
 const Link = styled.a`
-    margin: 20px 80px 0px 0px;
+    margin: 20px 0px 0px 0px;
     font-size: 16px;
     cursor: pointer;
+    display: flex;
+    flex-direction: column;
 `
 
 export const Login = () => {
@@ -64,10 +66,10 @@ export const Login = () => {
             <Form>
                 <Input placeholder='Username'></Input>
                 <Input placeholder='Password'></Input>   
-                <Link>REMEMBER ME!</Link> 
-                <Link>CREATE NEW ACCOUNT</Link>
             </Form>
             <Button>Sign Up</Button>
+            <Link>REMEMBER ME!</Link> 
+            <Link>CREATE NEW ACCOUNT</Link>
         </Wrapper>
        
     </Container>
