@@ -5,6 +5,6 @@
 import { Register} from "./pages/Register";
 
 const App = ()=>{
-    return <Register></Register>
+    return <Register/>
 }
 export default App;
