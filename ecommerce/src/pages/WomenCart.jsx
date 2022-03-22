@@ -1,3 +1,4 @@
+import { Button } from '@material-ui/core'
 import React from 'react'
 import styled from 'styled-components'
 import { Announce } from '../womenFrontPage/Announce'
@@ -61,8 +62,9 @@ const ProductDetails = styled.div`
 `
 const ProductImage = styled.img`
     width: 200px;
-    height: 300px;
+    height: 200px;
     margin: 20px;
+    object-fit: cover;
 `
 const ProductInfo = styled.div`
     padding: 20px;
@@ -91,20 +93,56 @@ const AmountContainer = styled.div`
     display: flex;
     align-items: center;
     margin-bottom: 20px;
+    font-size: 24px;
 `
 const Add = styled.div``
 const Amount = styled.div`
-    font-size: 24px;
-    margin: 5px;
+    //font-size: 24px;
+    margin: 10px;
+    font-weight: 500;
 `
 const Remove = styled.div``
 const FinalAmount = styled.div`
-    font-size: 30px;
+    font-size: 22px;
+    font-weight: 500;
 `
-
 const Summary = styled.div`
     flex: 1;
+    border: 1px solid teal;
+    height: 45vh;
+    border-radius: 10px;
+    padding: 20px;
 `
+const SummaryHeading = styled.h1`
+    font-size: 28px;
+    font-weight: 300;
+    text-align: center;
+    letter-spacing: 1.5px;
+    margin-bottom: 10px;
+`
+const SummaryProduct = styled.div`
+    margin: 30px 0px;
+    display: flex;
+    justify-content: space-between;
+    letter-spacing: 1.5px;
+    font-weight: ${props=> props.type === 'total' && '600'};
+    font-size: ${props=> props.type === 'total' && '22px'};
+`
+const SummaryText  = styled.span`
+`
+const SummaryPrice = styled.span``
+
+const Checkout = styled.button`
+    padding: 10px;
+    width:100%;
+    background-color: teal;
+    color: white;
+    font-size: 22px;
+    font-weight: 500;
+    letter-spacing: 1.5px;
+    border: none;
+`
+
 
 export const WomenCart = () => {
   return (
@@ -166,7 +204,26 @@ export const WomenCart = () => {
                         </Price>
                     </Product>
                 </Text>
-                <Summary>Summary</Summary>
+                <Summary>
+                    <SummaryHeading>ORDER SUMMARY</SummaryHeading>
+                    <SummaryProduct>
+                        <SummaryText>Subtotal</SummaryText>
+                        <SummaryPrice>RS. 2600</SummaryPrice>
+                    </SummaryProduct>
+                    <SummaryProduct>
+                        <SummaryText>Shipping Fees</SummaryText>
+                        <SummaryPrice>FREE</SummaryPrice>
+                    </SummaryProduct>
+                    <SummaryProduct>
+                        <SummaryText>Discount</SummaryText>
+                        <SummaryPrice>RS. -500</SummaryPrice>
+                    </SummaryProduct>
+                    <SummaryProduct type="total">
+                        <SummaryText>Total Amount</SummaryText>
+                        <SummaryPrice>RS. 2100</SummaryPrice>
+                    </SummaryProduct>
+                    <Checkout>CHECKOUT NOW</Checkout>
+                </Summary>
             </Bottom>
         </Wrapper>
 

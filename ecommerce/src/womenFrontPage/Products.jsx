@@ -1,6 +1,7 @@
 import {FavoriteBorderOutlined, SearchOutlined, ShoppingCartOutlined } from '@material-ui/icons'
 import React from 'react'
 import styled from 'styled-components'
+import { mobile } from '../responsive'
 
 const Heading = styled.div`
     opacity: 0;
@@ -26,7 +27,6 @@ const Container = styled.div`
      
     &:hover ${Heading}{
         opacity: 1;
-        
     }
 `
 const Image = styled.img`

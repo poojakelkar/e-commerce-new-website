@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import { product } from '../pages/data'
+import { product } from '../data'
 import { Products } from './Products'
 
 const Container = styled.div`
@@ -11,7 +11,7 @@ const Container = styled.div`
 `
 const Head = styled.h1`
     display: flex;
-    margin: 20px 0px 0px 20px;
+    margin: 20px 0px 0px 10px;
     font-size: 20px;
 `
 

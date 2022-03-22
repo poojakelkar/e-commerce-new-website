@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from "styled-components";
+import { mobile } from '../responsive';
 
 const Container = styled.div`
     background:linear-gradient(rgba(255,255,255,0.5),rgba(255,255,255,0.5)), url("https://images.pexels.com/photos/428338/pexels-photo-428338.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940") center;
