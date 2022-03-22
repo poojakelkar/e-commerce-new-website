@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from "styled-components";
+import { mobile } from '../responsive';
 
 const Container = styled.div`
     background:linear-gradient(rgba(255,255,255,0.5),rgba(255,255,255,0.5)), url("https://images.pexels.com/photos/428338/pexels-photo-428338.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940") center;
@@ -8,13 +9,14 @@ const Container = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
+    background-size: cover;
 `
 const Wrapper = styled.div`
     width: 40%;
-    height: 50%;
     padding: 30px;
     background-color: white;
     border: 1px solid teal;
+    ${mobile({width: '75%'})}
 `
 const Heading = styled.h1`
     font-size: 22px;

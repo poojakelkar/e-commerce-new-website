@@ -4,21 +4,24 @@ import { Announce } from '../womenFrontPage/Announce'
 import { Footer } from '../womenFrontPage/Footer'
 import { LastFooter } from '../womenFrontPage/LastFooter'
 import { Nav } from '../womenFrontPage/Nav'
+import { mobile } from '../responsive'
 
 const Container =  styled.div`
   
 `
 const Wrapper = styled.div`
   display: flex;
-  padding: 50px;
+  padding: 40px;
+  ${mobile({padding: '20px', flexDirection:'column'})}
 `
 const ProductImage = styled.div`
   flex:1
 `
 const Image = styled.img`
-  width: 90%;
+  width: 100%;
   height: 90vh;
   object-fit: cover; 
+  ${mobile({height: '40vh'})}
 `
 const InfoContainer = styled.div`
   flex:1
@@ -29,7 +32,7 @@ const Title = styled.h1`
 `
 const Info = styled.p`
   width: 90%;
-  margin: 30px 0px;
+  margin: 20px 0px;
   font-size: 18px;
   font-weight: 400;
   letter-spacing: 1.5px;
@@ -104,7 +107,7 @@ const AddToCart = styled.button`
   border: none;
   padding: 10px;
 
-  &: hover{
+  &:hover{
     background-color: #66B2B2;
   }
 `

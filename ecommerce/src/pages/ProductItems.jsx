@@ -5,6 +5,7 @@ import { LastFooter } from "../womenFrontPage/LastFooter"
 import { Nav } from "../womenFrontPage/Nav"
 //import { Products } from "../womenFrontPage/Products"
 import { WomenProducts } from "../womenFrontPage/WomenProducts"
+import { mobile } from "../responsive"
 
 const Container = styled.div`
 
@@ -18,10 +19,12 @@ const Filtering = styled.div`
 `
 const Filter = styled.div`
     margin: 20px;
+    ${mobile({width: '0px 20px', display:"flex", flexDirection:'column'})}
 `
 const FilterHeading = styled.span`
     font-size: 18px;
     font-weight: 600;
+    ${mobile({marginRight: '0px'})}
 `
 const ListSelect = styled.select`
     padding: 5px;
@@ -29,6 +32,7 @@ const ListSelect = styled.select`
     border: 1px solid black;
     font-size: 16px;
     letter-spacing: 1.5px;
+    ${mobile({margin: '10px 0px', width: '30vw', fontSize: '12px'})}
 `
 const ListOption = styled.option`
     
@@ -40,7 +44,7 @@ export const ProductItems = () => {
         <Announce></Announce>
         <Nav></Nav>
 
-        <Heading>WOMEN Dresses</Heading>
+        <Heading>WOMEN DRESSES</Heading>
         <Filtering>
             <Filter><FilterHeading>Filter: </FilterHeading>
                 <ListSelect>

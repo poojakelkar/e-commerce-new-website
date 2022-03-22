@@ -15,6 +15,7 @@ const Wrapper = styled.div`
     padding: 20px;
     background-color: white;
     border: 1px solid teal;
+    ${mobile({width: '75%'})}
 `
 const Heading = styled.h1`
     font-size: 22px;

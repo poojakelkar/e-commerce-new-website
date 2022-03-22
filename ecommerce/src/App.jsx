@@ -1,14 +1,16 @@
 //import Home from "./pages/Home";
-//import { ProductItems } from "./pages/ProductItems";
+import { ProductItems } from "./pages/ProductItems";
 
-import { Login } from "./pages/Login";
-//import { WomenCart } from "./pages/WomenCart";
+import { Register } from "./pages/Register";
 
-//import { SingleProduct } from "./pages/SingleProduct";
-//import { Register} from "./pages/Register";
+//import { Login } from "./pages/Login";
+import { WomenCart } from "./pages/WomenCart";
+
+import { SingleProduct } from "./pages/SingleProduct";
+
 
 const App = ()=>{
-    return <Login></Login>
+    return <WomenCart></WomenCart>
         
 }
 export default App;

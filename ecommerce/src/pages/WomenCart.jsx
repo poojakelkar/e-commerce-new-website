@@ -5,11 +5,15 @@ import { Announce } from '../womenFrontPage/Announce'
 import { Footer } from '../womenFrontPage/Footer'
 import { LastFooter } from '../womenFrontPage/LastFooter'
 import { Nav } from '../womenFrontPage/Nav'
+import { mobile } from '../responsive'
 
 
-const Container = styled.div``
+const Container = styled.div`
+    
+`
 const Wrapper = styled.div`
     padding: 20px;
+    ${mobile({padding: '10px'})}
 `
 const Heading = styled.h1`
     text-align: center;
@@ -31,9 +35,12 @@ const ShoppingButton = styled.button`
     border: ${props=> props.type ==='filled' && 'none'};
     background-color: ${props=> props.type ==='filled' ? 'teal' : "transparent"};
     color: ${props=> props.type ==='filled' && 'white'};
+    ${mobile({margin: '20px'})}
 `
 
-const TopHeading = styled.div``
+const TopHeading = styled.div`
+    ${mobile({display: 'none'})}
+`
 const TopText = styled.span`
     cursor: pointer;
     margin: 0px 20px;
@@ -42,6 +49,7 @@ const TopText = styled.span`
 const Bottom = styled.div`
     display: flex;
     justify-content: space-between;
+    ${mobile({flexDirection: 'column'})}
 `
 const Text = styled.div`
     flex: 3;
@@ -55,6 +63,7 @@ const Hr = styled.hr`
 const Product = styled.div`
     display: flex;
     justify-content: space-between;
+    ${mobile({flexDirection: 'column'})}
 `
 const ProductDetails = styled.div`
     flex: 2;
@@ -94,6 +103,7 @@ const AmountContainer = styled.div`
     align-items: center;
     margin-bottom: 20px;
     font-size: 24px;
+    ${mobile({margin: '5px 15px'})}
 `
 const Add = styled.div``
 const Amount = styled.div`
@@ -105,6 +115,7 @@ const Remove = styled.div``
 const FinalAmount = styled.div`
     font-size: 22px;
     font-weight: 500;
+    ${mobile({margin: '20px'})}
 `
 const Summary = styled.div`
     flex: 1;
