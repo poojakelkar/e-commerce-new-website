@@ -1,16 +1,18 @@
-//import Home from "./pages/Home";
-import { ProductItems } from "./pages/ProductItems";
+import Home from "./pages/Home";
+import { Login } from "./pages/Login";
 
-import { Register } from "./pages/Register";
+//import { ProductItems } from "./pages/ProductItems";
+
+//import { Register } from "./pages/Register";
 
 //import { Login } from "./pages/Login";
-import { WomenCart } from "./pages/WomenCart";
+//import { WomenCart } from "./pages/WomenCart";
 
-import { SingleProduct } from "./pages/SingleProduct";
+//import { SingleProduct } from "./pages/SingleProduct";
+//import { BrowserRouter } from "react-router-dom";
 
 
 const App = ()=>{
-    return <WomenCart></WomenCart>
-        
+    return <Login></Login>
 }
 export default App;

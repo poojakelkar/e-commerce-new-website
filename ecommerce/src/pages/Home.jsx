@@ -11,7 +11,7 @@ import { WomenProducts } from '../womenFrontPage/WomenProducts'
 export default function Home() {
   return (
     <div>
-         <Announce></Announce>
+        <Announce></Announce>
         <Nav></Nav>
         <Slide></Slide>
         <Category></Category>

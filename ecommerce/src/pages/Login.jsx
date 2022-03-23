@@ -11,7 +11,7 @@ const Container = styled.div`
     justify-content: center;
 `
 const Wrapper = styled.div`
-    width: 25%;
+    width: 30%;
     padding: 20px;
     background-color: white;
     border: 1px solid teal;
@@ -26,6 +26,8 @@ const Heading = styled.h1`
 const Form = styled.form`
     display: flex;
     flex-wrap: wrap;  
+    align-items: center;
+    justify-content: space-between;
 `;
 const Input = styled.input`
     font-size: 16px;
@@ -39,24 +41,39 @@ const Input = styled.input`
 const Button = styled.button`
     width: 40%;
     padding: 15px 20px;
-    margin: 20px 10px 0px 0px;
+    margin: 20px 0px 0px 0px;
     background-color: teal;
     border: none;
     color: white;
     cursor: pointer;
     font-size: 18px;
     font-weight: 400;
+    /* display: flex;
+     */
 
     &:hover{
         background-color: #66B2B2;
     }
 `
+
 const Link = styled.a`
     margin: 20px 0px 0px 0px;
     font-size: 16px;
     cursor: pointer;
     display: flex;
-    flex-direction: column;
+    align-items: center;
+`
+const LinkForget = styled.a`
+    color: ${props=> props.color};
+    margin: 20px 0px 0px 0px;
+    font-size: 16px;
+    cursor: pointer;
+    
+`
+const Checkbox = styled.input.attrs({ type: 'checkbox' })`
+    width: 18px;
+    height: 18px;
+    margin-right: 10px;
 `
 
 export const Login = () => {
@@ -68,10 +85,11 @@ export const Login = () => {
             <Form>
                 <Input placeholder='Username'></Input>
                 <Input placeholder='Password'></Input>   
+                <Link><Checkbox/>REMEMBER ME!</Link> 
+                <Link>CREATE NEW ACCOUNT</Link>
+                <Button>Sign Up</Button>
+                <LinkForget color='teal'>FORGET PASSWORD</LinkForget>
             </Form>
-            <Button>Sign Up</Button>
-            <Link>REMEMBER ME!</Link> 
-            <Link>CREATE NEW ACCOUNT</Link>
         </Wrapper>
        
     </Container>
