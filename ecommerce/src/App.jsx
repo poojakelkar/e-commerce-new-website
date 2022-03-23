@@ -1,3 +1,4 @@
+import Forget from "./pages/Forget";
 import Home from "./pages/Home";
 import { Login } from "./pages/Login";
 
@@ -13,6 +14,6 @@ import { Login } from "./pages/Login";
 
 
 const App = ()=>{
-    return <Login></Login>
+    return <Forget/>
 }
 export default App;

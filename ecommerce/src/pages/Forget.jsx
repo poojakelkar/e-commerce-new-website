@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 import styled from "styled-components";
 import { mobile } from '../responsive';
 
@@ -27,6 +27,7 @@ const Heading = styled.h1`
 const Form = styled.form`
     display: flex;
     flex-wrap: wrap;
+    flex-direction: column;
 `
 const Input = styled.input`
     font-size: 16px;
@@ -40,7 +41,7 @@ const Agree = styled.span`
     font-size: 18px;
     margin: 10px 20px;
     display: flex;
-    flex-direction: column;
+    align-items: center;
 `
 const Button = styled.button`
     width: 40%;
@@ -63,23 +64,21 @@ const Checkbox = styled.input.attrs({ type: 'checkbox' })`
     margin-right: 10px;
 `
 
-export const Register = () => {
+const Forget = () => {
   return (
     <Container>
-        <Wrapper>
-            <Heading>CREATE AN ACCOUNT</Heading>
-
-            <Form>
-                <Input placeholder='name'></Input>
-                <Input placeholder='Last Name'></Input>
-                <Input placeholder='Username'></Input>
-                <Input placeholder='Email'></Input>
-                <Input placeholder='Password'></Input>
-                <Input placeholder='Confirm Password'></Input>
-                <Agree><Checkbox/>I am accepting all the terms and condition</Agree>    
-            </Form>
-            <Button>Sign Up</Button>
-        </Wrapper>
-    </Container>
+    <Wrapper>
+        <Heading>FORGET PASSWORD</Heading>
+        <Form>
+                <Input placeholder='Email Id'></Input>
+                <Input placeholder='New Password'></Input>   
+                <Input placeholder='Re-Enter Password'></Input>  
+            <Agree><Checkbox/>I am accepting all the terms and condition</Agree>    
+        </Form>
+        <Button>Change Password</Button>
+    </Wrapper>
+</Container>
   )
 }
+
+export default Forget
