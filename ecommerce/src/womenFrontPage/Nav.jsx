@@ -74,7 +74,7 @@ export const Nav = () => {
             <Center><Logo>WOMEN.</Logo></Center>
             <Right>
                 <Item>REGISTER</Item>
-                <Item>SIGN IN</Item>
+                <Item>USER</Item>
                 <Item>
                     <Badge badgeContent={4} color="primary">
                         <ShoppingCartOutlined/>

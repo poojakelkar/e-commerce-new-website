@@ -59,7 +59,7 @@ const ShopNowBtn = styled.button`
     font-size: 18px;
     border: none;
 
-    &: hover{
+    &:hover{
         background-color: #66B2B2;
     }
 `

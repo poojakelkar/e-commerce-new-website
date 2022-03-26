@@ -58,7 +58,7 @@ const Email = styled.p`
     font-weight: 500;
     cursor: pointer;
 
-    &: hover{
+    &:hover{
         color: black;
     }
 `

@@ -8,6 +8,8 @@ import { Slide } from '../womenFrontPage/Slide'
 import { WomenProducts } from '../womenFrontPage/WomenProducts'
 
 
+
+
 export default function Home() {
   return (
     <div>

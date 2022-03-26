@@ -24,7 +24,8 @@ const Image = styled.img`
   ${mobile({height: '40vh'})}
 `
 const InfoContainer = styled.div`
-  flex:1
+  flex:1;
+  margin: 0px 20px;
 `
 const Title = styled.h1`
   font-weight: 400;
