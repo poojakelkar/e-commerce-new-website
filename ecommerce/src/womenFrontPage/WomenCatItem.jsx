@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import styled from "styled-components"
 import { mobile } from "../responsive";
 
@@ -50,7 +51,9 @@ export const WomenCatItem = ({item}) => {
         </Image>
         <TextHead>
             <Heading>{item.heading}</Heading>
-            <Button>SHOP NOW</Button>
+            <Link to='/product-list'>
+                <Button>SHOP NOW</Button>
+            </Link>
         </TextHead>
     </Container>
   )

@@ -3,6 +3,7 @@ import styled from "styled-components";
 import { slideItem } from "../data";
 import { useState } from "react";
 import { mobile } from "../responsive";
+import { Link } from "react-router-dom";
 
 const Container= styled.div`
     height: 100vh;
@@ -109,7 +110,9 @@ export const Slide = () => {
                 <TextSliding>
                     <Heading>{item.heading}</Heading>
                     <ParaText>{item.para}</ParaText>
-                    <ShopNowBtn>SHOP NOW</ShopNowBtn>
+                    <Link to='product-list'>
+                        <ShopNowBtn>SHOP NOW</ShopNowBtn>
+                    </Link>
                 </TextSliding>
             </Sliding>
             ))}   
