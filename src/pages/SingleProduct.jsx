@@ -109,7 +109,7 @@ const AddToCart = styled.button`
   }
 `;
 
-export const SingleProduct = () => {
+const SingleProduct = () => {
   //product/product_id
   return (
     <Container>
@@ -166,3 +166,5 @@ export const SingleProduct = () => {
     </Container>
   );
 };
+
+export default SingleProduct;

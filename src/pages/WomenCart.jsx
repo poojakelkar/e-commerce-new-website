@@ -169,7 +169,7 @@ Wishlist Routes
 3. DELETE /api/user/wishlist/:productId - private
  */
 
-export const WomenCart = () => {
+const WomenCart = () => {
   return (
     <Container>
       <Announce></Announce>
@@ -269,3 +269,5 @@ export const WomenCart = () => {
     </Container>
   );
 };
+
+export default WomenCart;
