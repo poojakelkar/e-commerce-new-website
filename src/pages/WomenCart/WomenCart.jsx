@@ -1,155 +1,40 @@
 import React from "react";
-import styled from "styled-components";
-import { Announce } from "../womenFrontPage/Announce";
-import { Footer } from "../womenFrontPage/Footer";
-import { LastFooter } from "../womenFrontPage/LastFooter";
-import { Nav } from "../womenFrontPage/Nav";
-import { mobile } from "../responsive";
-
-const Container = styled.div``;
-const Wrapper = styled.div`
-  padding: 20px;
-  ${mobile({ padding: "10px" })}
-`;
-const Heading = styled.h1`
-  text-align: center;
-  font-size: 30px;
-  font-weight: 300;
-`;
-const Top = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 20px;
-`;
-const ShoppingButton = styled.button`
-  padding: 20px;
-  font-size: 14px;
-  letter-spacing: 1.5px;
-  font-weight: 600;
-  cursor: pointer;
-  border: ${(props) => props.type === "filled" && "none"};
-  background-color: ${(props) =>
-    props.type === "filled" ? "teal" : "transparent"};
-  color: ${(props) => props.type === "filled" && "white"};
-  ${mobile({ margin: "20px" })}
-`;
-
-const TopHeading = styled.div`
-  ${mobile({ display: "none" })}
-`;
-const TopText = styled.span`
-  cursor: pointer;
-  margin: 0px 20px;
-  text-align: center;
-`;
-const Bottom = styled.div`
-  display: flex;
-  justify-content: space-between;
-  ${mobile({ flexDirection: "column" })}
-`;
-const Text = styled.div`
-  flex: 3;
-`;
-const Hr = styled.hr`
-  background-color: #eee;
-  border: none;
-  height: 1px;
-`;
-
-const Product = styled.div`
-  display: flex;
-  justify-content: space-between;
-  ${mobile({ flexDirection: "column" })}
-`;
-const ProductDetails = styled.div`
-  flex: 2;
-  display: flex;
-`;
-const ProductImage = styled.img`
-  width: 200px;
-  height: 200px;
-  margin: 20px;
-  object-fit: cover;
-`;
-const ProductInfo = styled.div`
-  padding: 20px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-`;
-const Name = styled.span``;
-const Id = styled.span``;
-const Color = styled.div`
-  width: 20px;
-  height: 20px;
-  border-radius: 50%;
-  background-color: ${(props) => props.color};
-`;
-const Size = styled.span``;
-
-const Price = styled.div`
-  flex: 1;
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  justify-content: center;
-`;
-const AmountContainer = styled.div`
-  display: flex;
-  align-items: center;
-  margin-bottom: 20px;
-  font-size: 24px;
-  ${mobile({ margin: "5px 15px" })}
-`;
-const Add = styled.div``;
-const Amount = styled.div`
-  //font-size: 24px;
-  margin: 10px;
-  font-weight: 500;
-`;
-const Remove = styled.div``;
-const FinalAmount = styled.div`
-  font-size: 22px;
-  font-weight: 500;
-  ${mobile({ margin: "20px" })}
-`;
-const Summary = styled.div`
-  flex: 1;
-  border: 1px solid teal;
-  height: 45vh;
-  border-radius: 10px;
-  padding: 20px;
-`;
-const SummaryHeading = styled.h1`
-  font-size: 28px;
-  font-weight: 300;
-  text-align: center;
-  letter-spacing: 1.5px;
-  margin-bottom: 10px;
-`;
-const SummaryProduct = styled.div`
-  margin: 30px 0px;
-  display: flex;
-  justify-content: space-between;
-  letter-spacing: 1.5px;
-  font-weight: ${(props) => props.type === "total" && "600"};
-  font-size: ${(props) => props.type === "total" && "22px"};
-`;
-const SummaryText = styled.span``;
-const SummaryPrice = styled.span``;
-
-const Checkout = styled.button`
-  padding: 10px;
-  width: 100%;
-  background-color: teal;
-  color: white;
-  font-size: 22px;
-  font-weight: 500;
-  letter-spacing: 1.5px;
-  border: none;
-`;
-
+import { Announce } from "../../womenFrontPage/Announce";
+import { Footer } from "../../womenFrontPage/Footer";
+import { LastFooter } from "../../womenFrontPage/LastFooter";
+import { Nav } from "../../womenFrontPage/Nav";
+import {
+  Add,
+  Amount,
+  AmountContainer,
+  Bottom,
+  Checkout,
+  Color,
+  Container,
+  FinalAmount,
+  Heading,
+  Hr,
+  Id,
+  Name,
+  Price,
+  Product,
+  ProductDetails,
+  ProductImage,
+  ProductInfo,
+  Remove,
+  ShoppingButton,
+  Size,
+  Summary,
+  SummaryHeading,
+  SummaryPrice,
+  SummaryProduct,
+  SummaryText,
+  Text,
+  Top,
+  TopHeading,
+  TopText,
+  Wrapper,
+} from "./styles";
 /**
  Auth Routes
 Products Routes
