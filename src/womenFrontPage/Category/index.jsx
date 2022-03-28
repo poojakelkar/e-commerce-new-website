@@ -1,7 +1,7 @@
 import React from "react";
 
 import { womenItem } from "../../data";
-import { WomenCatItem } from "../WomenCatItem";
+import { WomenCatItem } from "../WomenCatItem/index";
 import { Container } from "./styles";
 
 export const Category = () => {

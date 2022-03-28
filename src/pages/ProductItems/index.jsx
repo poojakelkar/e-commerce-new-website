@@ -1,9 +1,9 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
-import { Announce } from "../../womenFrontPage/Announce";
-import { Footer } from "../../womenFrontPage/Footer";
-import { LastFooter } from "../../womenFrontPage/LastFooter";
-import { Nav } from "../../womenFrontPage/Nav";
+import { Announce } from "../../womenFrontPage/Announce/index";
+import { Footer } from "../../womenFrontPage/Footer/index";
+import { LastFooter } from "../../womenFrontPage/LastFooter/index";
+import { Nav } from "../../womenFrontPage/Nav/index";
 import {
   Button,
   Card,
