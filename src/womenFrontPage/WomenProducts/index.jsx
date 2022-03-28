@@ -1,7 +1,7 @@
 import React from "react";
 
 import { product } from "../../data";
-import { Products } from "../Products";
+import { Products } from "../Products/index";
 import { Container, Head } from "./styles";
 
 const WomenProducts = () => {
