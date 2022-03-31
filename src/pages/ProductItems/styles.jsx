@@ -5,7 +5,7 @@ export const Container = styled.div``;
 export const Grid = styled.div`
   overflow: hidden;
   display: grid;
-  height: 130vh;
+  height: 150vh;
   color: white;
   grid-template-areas: "Sidebar SideContainer SideContainer SideContainer";
   grid-gap: 10px;
@@ -13,7 +13,7 @@ export const Grid = styled.div`
 export const SideBar = styled.div`
   color: black;
   width: 20vw;
-  height: 130vh;
+  height: 150vh;
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
@@ -32,10 +32,11 @@ export const Title = styled.h1`
 `;
 export const Clear = styled.h5`
   font-size: 20px;
+  font-weight: 300;
   cursor: pointer;
 `;
 export const PriceSlider = styled.div`
-  margin: 40px 0px;
+  margin: 20px 0px;
   padding: 10px;
   border: 1px solid #888;
 `;
@@ -44,21 +45,37 @@ export const SlideContainer = styled.div`
 `;
 export const PriceSliderText = styled.div`
   display: flex;
-  gap: 10px;
   font-size: small;
 `;
 export const Price = styled.p`
   font-weight: bold;
-  padding: 10px 40px 0px 0px;
+  padding-top: 10px;
+  margin-right: 70px;
 `;
 export const PriceSlide = styled.input.attrs({
   type: "range",
   min: "1",
-  max: "200",
-  value: "20",
+  max: "100",
+  value: "10",
 })`
   width: 200px;
   border: 1px solid #888;
+`;
+
+export const Sorting = styled.div`
+  margin-top: 20px;
+  margin-bottom: 10px;
+  padding-bottom: 10px;
+  font-size: 20px;
+`;
+export const SortContainer = styled.div`
+  margin-top: 20px;
+`;
+export const SortLowToHigh = styled.input.attrs({ type: "radio" })`
+  margin-right: 5px;
+`;
+export const SortHighToLow = styled.input.attrs({ type: "radio" })`
+  margin-right: 5px;
 `;
 export const Category = styled.div``;
 export const CheckBoxItem = styled.div`
@@ -70,6 +87,7 @@ export const CheckBox = styled.input.attrs({ type: "checkbox" })`
   height: 20px;
   margin-top: 20px;
   cursor: pointer;
+  margin-right: 5px;
 `;
 export const RadioContainer = styled.div`
   margin-top: 20px;
@@ -90,18 +108,18 @@ export const SideContainer = styled.div`
   overflow-y: auto;
 `;
 export const Card = styled.div`
+  width: 250px;
+  height: 57vh;
   margin: 10px;
 `;
 export const ProductImg = styled.div`
-  width: 250px;
-  height: 400px;
+  width: 100%;
   background-color: white;
 `;
 export const Image = styled.img`
   width: 250px;
   height: 300px;
   object-fit: cover;
-  border: 1px solid black;
 `;
 export const ImgInfo = styled.div`
   color: black;

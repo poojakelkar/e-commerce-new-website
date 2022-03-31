@@ -1,5 +1,6 @@
 import axios from "axios";
-import { useEffect, useState } from "react";
+import { useEffect, useReducer, useState } from "react";
+import { Link } from "react-router-dom";
 import { Announce } from "../../womenFrontPage/Announce/index";
 import { Footer } from "../../womenFrontPage/Footer/index";
 import { LastFooter } from "../../womenFrontPage/LastFooter/index";
@@ -30,6 +31,10 @@ import {
   SideContainer,
   SlideContainer,
   Title,
+  Sorting,
+  SortHighToLow,
+  SortLowToHigh,
+  SortContainer,
 } from "./styles";
 
 const ProductItems = () => {
@@ -60,6 +65,37 @@ const ProductItems = () => {
     });
   }, []);
 
+  const [{ sortBy }, dispatch] = useReducer(
+    function reducer(state, action) {
+      switch (action.type) {
+        case "SORT":
+          return {
+            ...state,
+            sortBy: action.payload,
+          };
+        default:
+          return state;
+      }
+    },
+    {
+      sortBy: null,
+    }
+  );
+
+  function getSortedData(productList, sortBy) {
+    if (sortBy && sortBy === "PRICE_HIGH_TO_LOW") {
+      return productList.sort((a, b) => b["price"] - a["price"]);
+    }
+
+    if (sortBy && sortBy === "PRICE_LOW_TO_HIGH") {
+      return productList.sort((a, b) => a["price"] - b["price"]);
+    }
+    return productList;
+  }
+
+  getSortedData(products, sortBy);
+
+  //const [check, setcheck] = useReducer("");
   // useStates
   // useEffects
   // handelers
@@ -86,6 +122,32 @@ const ProductItems = () => {
               <PriceSlide></PriceSlide>
             </SlideContainer>
           </PriceSlider>
+
+          <Sorting>
+            <Title>Sort</Title>
+            <SortContainer>
+              <SortLowToHigh
+                type="radio"
+                name="sort"
+                onChange={() =>
+                  dispatch({ type: "SORT", payload: "PRICE_LOW_TO_HIGH" })
+                }
+                checked={sortBy && sortBy === "PRICE_LOW_TO_HIGH"}
+              />
+              Price Low-to-High
+            </SortContainer>
+            <SortContainer>
+              <SortHighToLow
+                type="radio"
+                name="sort"
+                onChange={() =>
+                  dispatch({ type: "SORT", payload: "PRICE_HIGH_TO_LOW" })
+                }
+                checked={sortBy && sortBy === "PRICE_HIGH_TO_LOW"}
+              />
+              Price High-to-Low
+            </SortContainer>
+          </Sorting>
 
           <Category>
             <Title>Category</Title>
@@ -124,12 +186,16 @@ const ProductItems = () => {
             products.map((item) => (
               <Card>
                 <ProductImg key={item._id}>
-                  <Image src={item.image} />
+                  <Link to="/product/:productId">
+                    <Image src={item.image} />
+                  </Link>
                   <ImgInfo>
                     <ImgTitle>{item?.title}</ImgTitle>
                     <CategoryName>Rs.{item?.price}</CategoryName>
                   </ImgInfo>
-                  <Button>ADD TO CARD</Button>
+                  <Link to="/cart">
+                    <Button>ADD TO CARD</Button>
+                  </Link>
                 </ProductImg>
               </Card>
             ))}

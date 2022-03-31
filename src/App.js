@@ -1,12 +1,12 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import Forget from "./pages/Forget";
+import Forget from "./pages/Forget/index";
 import Home from "./pages/Home";
-import Login from "./pages/Login";
-import ProductItems from "./pages/ProductItems";
-import Register from "./pages/Register";
-import SingleProduct from "./pages/SingleProduct";
-import WomenCart from "./pages/WomenCart";
-import WomenProducts from "./womenFrontPage/WomenProducts";
+import Login from "./pages/Login/index";
+import ProductItems from "./pages/ProductItems/index";
+import Register from "./pages/Register/index";
+import SingleProduct from "./pages/SingleProduct/index.jsx";
+import WomenCart from "./pages/WomenCart/index";
+import WomenProducts from "./womenFrontPage/WomenProducts/index";
 
 const App = () => {
   return (
