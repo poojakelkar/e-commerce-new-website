@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import { Announce } from "../../womenFrontPage/Announce/index";
 import { Footer } from "../../womenFrontPage/Footer/index";
 import { LastFooter } from "../../womenFrontPage/LastFooter/index";
@@ -64,7 +65,9 @@ const WomenCart = () => {
         <Heading>YOUR BAG</Heading>
 
         <Top>
-          <ShoppingButton>CONTINUE SHOPPING</ShoppingButton>
+          <Link to="/product-list">
+            <ShoppingButton>CONTINUE SHOPPING</ShoppingButton>
+          </Link>
           <TopHeading>
             <TopText>Shopping Bag(2)</TopText>
             <TopText>Your Wishlist(0)</TopText>

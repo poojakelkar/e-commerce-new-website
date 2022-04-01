@@ -28,7 +28,7 @@ export const ImgSliding = styled.div`
   flex: 1;
 `;
 export const Image = styled.img`
-  margin: 60px 90px;
+  margin: 4rem 6rem;
   height: 80%;
   width: 60%;
 `;
@@ -37,18 +37,18 @@ export const TextSliding = styled.div`
 `;
 
 export const Heading = styled.h1`
-  font-size: 70px;
+  font-size: 4rem;
 `;
 export const ParaText = styled.p`
-  margin: 40px 0px;
-  font-size: 20px;
+  margin: 2rem 0rem;
+  font-size: 1.5rem;
   font-weight: 500;
-  line-height: 30px;
+  line-height: 2rem;
   letter-spacing: 2.5px;
-  padding-right: 80px;
+  padding-right: 4rem;
 `;
 export const ShopNowBtn = styled.button`
-  padding: 10px;
+  padding: 1rem;
   background-color: teal;
   cursor: pointer;
   color: white;
@@ -62,8 +62,8 @@ export const ShopNowBtn = styled.button`
 `;
 
 export const Arrow = styled.div`
-  width: 50px;
-  height: 50px;
+  width: 4rem;
+  height: 4rem;
   background-color: #fff7f7;
   border-radius: 50%;
   display: flex;
@@ -76,6 +76,6 @@ export const Arrow = styled.div`
   left: ${(props) => props.direction === "left" && "10px"};
   right: ${(props) => props.direction === "right" && "10px"};
   cursor: pointer;
-  opacity: 0.8;
+  opacity: 1;
   z-index: 2;
 `;

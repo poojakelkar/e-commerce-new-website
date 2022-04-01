@@ -3,7 +3,7 @@ import styled from "styled-components";
 
 export const Container = styled.div`
   display: flex;
-  padding: 20px;
+  padding: 1rem;
   justify-content: space-between;
-  ${mobile({ flexDirection: "column", padding: "0" })}
+  ${mobile({ flexDirection: "column", padding: "0rem" })}
 `;

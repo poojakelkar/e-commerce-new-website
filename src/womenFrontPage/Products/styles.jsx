@@ -15,13 +15,14 @@ export const Heading = styled.div`
 `;
 export const Container = styled.div`
   flex: 1;
-  margin: 0px 10px;
-  min-width: 280px;
-  height: 350px;
+  margin: 0rem 0.2rem;
+  min-width: 20rem;
+  height: 25rem;
   display: flex;
   align-items: center;
   justify-content: center;
   position: relative;
+  ${mobile({ minWidth: "12rem", height: "15rem" })}
 
   &:hover ${Heading} {
     opacity: 1;
@@ -34,9 +35,9 @@ export const Image = styled.img`
 `;
 
 export const Icon = styled.div`
-  margin: 8px;
-  width: 40px;
-  height: 40px;
+  margin: 0.5rem;
+  width: 3rem;
+  height: 3rem;
   border-radius: 50%;
   background-color: white;
   display: flex;

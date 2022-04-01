@@ -3,7 +3,7 @@ import { mobile } from "../../responsive";
 
 export const Container = styled.div`
   flex: 1;
-  margin: 8px;
+  margin: 0.5rem;
   height: 70vh;
   position: relative;
 `;
@@ -26,16 +26,18 @@ export const TextHead = styled.div`
 `;
 export const Heading = styled.h1`
   color: white;
-  margin-bottom: 20px;
+  margin-bottom: 1.5rem;
+  ${mobile({ fontSize: "1rem" })}
 `;
 export const Button = styled.button`
-  padding: 10px;
-  font-size: 18px;
+  padding: 1rem;
+  font-size: 1.2rem;
   font-weight: 600;
   background-color: teal;
   color: white;
   border: none;
   cursor: pointer;
+  ${mobile({ fontSize: "0.8rem", padding: "0.5rem" })}
 
   &:hover {
     background-color: #66b2b2;

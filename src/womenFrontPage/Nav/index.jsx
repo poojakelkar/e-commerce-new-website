@@ -16,6 +16,7 @@ import {
   SearchContainer,
   StyledLink,
 } from "./styles";
+
 export const Nav = () => {
   return (
     <Container>
@@ -33,7 +34,7 @@ export const Nav = () => {
           </Center>
         </StyledLink>
         <Right>
-          <StyledLink to="./Login">
+          <StyledLink to="/Login">
             <Item>LOGIN</Item>
           </StyledLink>
           <Item>USER</Item>

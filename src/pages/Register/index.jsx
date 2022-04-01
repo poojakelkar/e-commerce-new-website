@@ -2,9 +2,11 @@ import React from "react";
 import { Link } from "react-router-dom";
 import {
   Agree,
+  AlreadyAc,
   Button,
   Checkbox,
   Container,
+  Element,
   Form,
   Heading,
   Input,
@@ -28,9 +30,15 @@ export const Register = () => {
             <Checkbox />I am accepting all the terms and condition
           </Agree>
         </Form>
-        <Link to="/Login">
-          <Button>Sign Up</Button>
-        </Link>
+
+        <Element>
+          <Link to="/login">
+            <Button>Sign Up</Button>
+          </Link>
+          <Link to="/login" style={{ textDecoration: "none" }}>
+            <AlreadyAc>Already Account? Sign In</AlreadyAc>
+          </Link>
+        </Element>
       </Wrapper>
     </Container>
   );

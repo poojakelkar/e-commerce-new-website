@@ -3,15 +3,15 @@ import styled from "styled-components";
 import { Link } from "react-router-dom";
 
 export const Container = styled.div`
-  height: 60px;
-  ${mobile({ height: "50px" })}
+  height: 4rem;
+  ${mobile({ height: "1.5rem" })}
 `;
 export const NavComponent = styled.div`
-  padding: 10px 20px;
+  padding: 0.5rem 2rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  ${mobile({ padding: "10px 0px" })}
+  ${mobile({ padding: "0.4rem 0rem" })}
 `;
 export const Left = styled.div`
   flex: 1;
@@ -19,7 +19,7 @@ export const Left = styled.div`
   align-items: center;
 `;
 export const Lang = styled.span`
-  font-size: 14px;
+  font-size: 1rem;
   cursor: pointer;
   ${mobile({ display: "none" })}
 `;
@@ -27,12 +27,12 @@ export const SearchContainer = styled.div`
   border: 0.5px solid lightgrey;
   display: flex;
   align-items: center;
-  margin-left: 25px;
-  padding: 5px;
+  margin-left: 1rem;
+  padding: 0.3rem;
 `;
 export const Input = styled.input`
   border: none;
-  ${mobile({ width: "50px" })}
+  ${mobile({ width: "2rem" })}
 `;
 export const Center = styled.div`
   flex: 1;
@@ -40,7 +40,7 @@ export const Center = styled.div`
 `;
 export const Logo = styled.h1`
   font-weight: bold;
-  ${mobile({ fontSize: "24px", marginLeft: "10px" })}
+  ${mobile({ fontSize: "1rem", marginLeft: "1.7rem" })}
 `;
 export const Right = styled.div`
   flex: 1;
@@ -50,10 +50,10 @@ export const Right = styled.div`
   ${mobile({ flex: 2, justifyContent: "center" })}
 `;
 export const Item = styled.div`
-  font-size: 14px;
+  font-size: 1rem;
   cursor: pointer;
-  margin-left: 25px;
-  ${mobile({ fontSize: "12px", marginLeft: "5px" })}
+  margin-left: 2rem;
+  ${mobile({ fontSize: "0.5rem", marginLeft: "0.3rem" })}
 `;
 
 export const StyledLink = styled(Link)`

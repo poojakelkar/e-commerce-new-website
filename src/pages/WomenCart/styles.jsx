@@ -99,7 +99,6 @@ export const AmountContainer = styled.div`
 `;
 export const Add = styled.div``;
 export const Amount = styled.div`
-  //font-size: 24px;
   margin: 10px;
   font-weight: 500;
 `;
@@ -112,7 +111,7 @@ export const FinalAmount = styled.div`
 export const Summary = styled.div`
   flex: 1;
   border: 1px solid teal;
-  height: 45vh;
+  height: 47vh;
   border-radius: 10px;
   padding: 20px;
 `;

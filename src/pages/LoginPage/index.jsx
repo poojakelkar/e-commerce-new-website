@@ -4,10 +4,12 @@ import {
   Button,
   Checkbox,
   Container,
+  CreateAc,
   Form,
   Heading,
   Input,
   LinkForget,
+  RememberContainer,
   Wrapper,
 } from "./styles";
 
@@ -48,11 +50,16 @@ const Login = () => {
               });
             }}
           ></Input>
-          <Link>
+          <RememberContainer>
             <Checkbox />
             REMEMBER ME!
-          </Link>
-          <Link>CREATE NEW ACCOUNT</Link>
+          </RememberContainer>
+          <CreateAc>
+            <Link to="/register" style={{ textDecoration: "none" }}>
+              CREATE NEW ACCOUNT
+            </Link>
+          </CreateAc>
+
           <Button onClick={loginUser}>LOGIN</Button>
           <LinkForget color="teal">FORGET PASSWORD</LinkForget>
         </Form>
