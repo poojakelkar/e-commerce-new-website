@@ -1,5 +1,5 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import Forget from "./pages/Forget/index";
+import Forget from "./pages/Forget";
 import Home from "./pages/Home";
 import LoginPage from "./pages/LoginPage";
 import ProductItems from "./pages/ProductItems/index";

@@ -61,7 +61,9 @@ const Login = () => {
           </CreateAc>
 
           <Button onClick={loginUser}>LOGIN</Button>
-          <LinkForget color="teal">FORGET PASSWORD</LinkForget>
+          <Link to="/forget-password" style={{ textDecoration: "none" }}>
+            <LinkForget color="teal">FORGET PASSWORD</LinkForget>
+          </Link>
         </Form>
       </Wrapper>
     </Container>
