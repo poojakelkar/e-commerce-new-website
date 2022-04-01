@@ -95,9 +95,9 @@ const WomenCart = () => {
               </ProductDetails>
               <Price>
                 <AmountContainer>
-                  <Add>+</Add>
-                  <Amount>2</Amount>
                   <Remove>-</Remove>
+                  <Amount>2</Amount>
+                  <Add>+</Add>
                 </AmountContainer>
                 <FinalAmount>RS. 1600</FinalAmount>
               </Price>
@@ -121,9 +121,9 @@ const WomenCart = () => {
               </ProductDetails>
               <Price>
                 <AmountContainer>
-                  <Add>+</Add>
-                  <Amount>1</Amount>
                   <Remove>-</Remove>
+                  <Amount>1</Amount>
+                  <Add>+</Add>
                 </AmountContainer>
                 <FinalAmount>RS. 1000</FinalAmount>
               </Price>

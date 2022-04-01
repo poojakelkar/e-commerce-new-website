@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import { Announce } from "../../womenFrontPage/Announce/index";
 import { Footer } from "../../womenFrontPage/Footer/index";
 import { LastFooter } from "../../womenFrontPage/LastFooter/index";
@@ -73,7 +74,9 @@ const SingleProduct = () => {
               <Amount>1</Amount>
               <Add>+</Add>
             </AmountContainer>
-            <AddToCart>Add To Cart</AddToCart>
+            <Link to="/cart">
+              <AddToCart>Add To Cart</AddToCart>
+            </Link>
           </AddContainer>
         </InfoContainer>
       </Wrapper>
