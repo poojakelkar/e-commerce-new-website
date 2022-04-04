@@ -1,5 +1,7 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React, { useContext, useEffect, useState } from "react";
+import { Link, useNavigate, useParams } from "react-router-dom";
+import { addToCart } from "../../CardService";
+import { StateContext } from "../../Context";
 import { Announce } from "../../womenFrontPage/Announce/index";
 import { Footer } from "../../womenFrontPage/Footer/index";
 import { LastFooter } from "../../womenFrontPage/LastFooter/index";
@@ -28,7 +30,33 @@ import {
 } from "./styles";
 
 const SingleProduct = () => {
+  const navigate = useNavigate();
+  const { productId } = useParams();
+  const [productItem, setProductItem] = useState({});
+  const { state, dispatch } = useContext(StateContext);
   //product/product_id
+  useEffect(() => {
+    async function fetchData() {
+      try {
+        const res = await fetch(`/api/products/${productId}`, {
+          method: "GET",
+        });
+        const data = await res.json();
+        setProductItem(data.product);
+      } catch (e) {
+        console.log(e);
+      }
+    }
+    fetchData();
+  }, [productId]);
+
+  const handleAddToCart = () => {
+    const isItemPresent = state.cart.find((item) => item._id === productId);
+    isItemPresent === undefined && addToCart(productItem, dispatch);
+    navigate("/cart");
+  };
+
+  console.log(productItem);
   return (
     <Container>
       <Announce></Announce>
@@ -36,18 +64,18 @@ const SingleProduct = () => {
 
       <Wrapper>
         <ProductImage>
-          <Image src="https://media.istockphoto.com/photos/blonde-young-woman-in-floral-spring-summer-dress-picture-id682499872?b=1&k=20&m=682499872&s=170667a&w=0&h=HOdWkdS7QluvUB4WBpWP1-K_KMp2HM_WUt4of8HCGXQ="></Image>
+          <Image src={productItem.image}></Image>
         </ProductImage>
 
         <InfoContainer>
-          <Title>Floral Dress</Title>
+          <Title>{productItem.title}</Title>
           <Info>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius quas
             sapiente voluptate amet labore vitae praesentium? Quas, maxime? Sint
             sit inventore esse iure delectus error molestias eaque deleniti
             earum ad!
           </Info>
-          <Price>Rs.600</Price>
+          <Price>Rs.{productItem.price}</Price>
           <Filter>
             <ColorFilter>
               <ColorTitle>Color: </ColorTitle>
@@ -74,9 +102,7 @@ const SingleProduct = () => {
               <Amount>1</Amount>
               <Add>+</Add>
             </AmountContainer>
-            <Link to="/cart">
-              <AddToCart>Add To Cart</AddToCart>
-            </Link>
+            <AddToCart onClick={handleAddToCart}>Add To Cart</AddToCart>
           </AddContainer>
         </InfoContainer>
       </Wrapper>

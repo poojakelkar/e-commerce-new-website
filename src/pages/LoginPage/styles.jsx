@@ -82,7 +82,6 @@ export const CreateAc = styled.span`
 `;
 
 export const LinkForget = styled.a`
-  color: ${(props) => props.color};
   margin-top: 1.5rem;
   font-size: 1.1rem;
   cursor: pointer;

@@ -12,6 +12,7 @@ import {
   RememberContainer,
   Wrapper,
 } from "./styles";
+import { toast } from "react-toastify";
 
 const Login = () => {
   const navigate = useNavigate();
@@ -21,9 +22,11 @@ const Login = () => {
   });
   console.log({ formData });
   const loginUser = () => {
-    // login api call
-    // on success
-    navigate("/");
+    if (formData.username === "pooja" && formData.password === "pooja@123") {
+      navigate("/");
+    } else {
+      toast.error("Incorrect Username or Password");
+    }
   };
   return (
     <Container>
@@ -31,7 +34,7 @@ const Login = () => {
         <Heading>Login</Heading>
         <Form>
           <Input
-            placeholder="username"
+            placeholder="pooja"
             onChange={(event) => {
               const value = event.target.value;
               setFormData({
@@ -41,7 +44,7 @@ const Login = () => {
             }}
           ></Input>
           <Input
-            placeholder="password"
+            placeholder="pooja@123"
             onChange={(event) => {
               const value = event.target.value;
               setFormData({
@@ -55,14 +58,20 @@ const Login = () => {
             REMEMBER ME!
           </RememberContainer>
           <CreateAc>
-            <Link to="/register" style={{ textDecoration: "none" }}>
+            <Link
+              to="/register"
+              style={{ textDecoration: "none", color: "teal" }}
+            >
               CREATE NEW ACCOUNT
             </Link>
           </CreateAc>
 
           <Button onClick={loginUser}>LOGIN</Button>
-          <Link to="/forget-password" style={{ textDecoration: "none" }}>
-            <LinkForget color="teal">FORGET PASSWORD</LinkForget>
+          <Link
+            to="/forget-password"
+            style={{ textDecoration: "none", color: "teal" }}
+          >
+            <LinkForget>FORGET PASSWORD</LinkForget>
           </Link>
         </Form>
       </Wrapper>

@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import {
   Agree,
   Button,
@@ -23,7 +24,9 @@ const Forget = () => {
             <Checkbox />I am accepting all the terms and condition
           </Agree>
         </Form>
-        <Button>Change Password</Button>
+        <Link to="/login">
+          <Button>Change Password</Button>
+        </Link>
       </Wrapper>
     </Container>
   );

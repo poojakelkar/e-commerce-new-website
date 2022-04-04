@@ -34,9 +34,6 @@ export const Nav = () => {
           </Center>
         </StyledLink>
         <Right>
-          <StyledLink to="/Login">
-            <Item>LOGIN</Item>
-          </StyledLink>
           <Item>USER</Item>
           <Item>
             <StyledLink to="/cart">

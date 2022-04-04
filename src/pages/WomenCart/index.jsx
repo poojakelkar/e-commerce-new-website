@@ -1,5 +1,5 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React, { useContext, useEffect, useState } from "react";
+import { Link, useNavigate, useParams } from "react-router-dom";
 import { Announce } from "../../womenFrontPage/Announce/index";
 import { Footer } from "../../womenFrontPage/Footer/index";
 import { LastFooter } from "../../womenFrontPage/LastFooter/index";
@@ -36,26 +36,10 @@ import {
   TopText,
   Wrapper,
 } from "./styles";
-/**
- Auth Routes
-Products Routes
-1. GET /api/products - public
-2. GET /api/products/:productId - public
-Category Routes
-1. GET /api/categories - public
-2. GET /api/category/:categoryId - public
-Cart Routes
-1. GET /api/user/cart - private
-2. POST /api/user/cart - private
-3. DELETE /api/user/cart/:productId - private
-4. POST /api/user/cart/:productId - private
-Wishlist Routes
-1. GET /api/user/wishlist - private
-2. POST /api/user/wishlist - private
-3. DELETE /api/user/wishlist/:productId - private
- */
-
+import { useCounter } from "../../counterContext";
 const WomenCart = () => {
+  const { state, dispatcher } = useCounter();
+
   return (
     <Container>
       <Announce></Announce>
@@ -70,7 +54,9 @@ const WomenCart = () => {
           </Link>
           <TopHeading>
             <TopText>Shopping Bag(2)</TopText>
-            <TopText>Your Wishlist(0)</TopText>
+            <Link to="/wishlist" style={{ textDecoration: "none" }}>
+              <TopText>Your Wishlist(1)</TopText>
+            </Link>
           </TopHeading>
           <ShoppingButton type="filled">CHECKOUT NOW</ShoppingButton>
         </Top>
@@ -95,9 +81,11 @@ const WomenCart = () => {
               </ProductDetails>
               <Price>
                 <AmountContainer>
-                  <Remove>-</Remove>
-                  <Amount>2</Amount>
-                  <Add>+</Add>
+                  <Remove onClick={() => dispatcher({ type: "decrement" })}>
+                    -
+                  </Remove>
+                  <Amount>{state?.count}</Amount>
+                  <Add onClick={() => dispatcher({ type: "increment" })}>+</Add>
                 </AmountContainer>
                 <FinalAmount>RS. 1600</FinalAmount>
               </Price>
@@ -121,9 +109,11 @@ const WomenCart = () => {
               </ProductDetails>
               <Price>
                 <AmountContainer>
-                  <Remove>-</Remove>
-                  <Amount>1</Amount>
-                  <Add>+</Add>
+                  <Remove onClick={() => dispatcher({ type: "decrement" })}>
+                    -
+                  </Remove>
+                  <Amount>{state.count}</Amount>
+                  <Add onClick={() => dispatcher({ type: "increment" })}>+</Add>
                 </AmountContainer>
                 <FinalAmount>RS. 1000</FinalAmount>
               </Price>

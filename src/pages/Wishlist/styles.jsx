@@ -99,10 +99,20 @@ export const Price = styled.div`
   flex-direction: column;
   justify-content: center;
 `;
+export const DeleteProduct = styled.button`
+  padding: 0.4rem 0.5rem;
+  border-radius: 50%;
+  border: none;
+  background-color: transparent;
+  &:hover {
+    background-color: teal;
+    color: white;
+  }
+`;
 export const AmountContainer = styled.div`
   display: flex;
   align-items: center;
-  margin-bottom: 1.5rem;
+  margin: 1.5rem 0rem;
   font-size: 1.5rem;
   ${mobile({ margin: "5px 15px", fontSize: "1rem" })}
 `;
@@ -120,40 +130,4 @@ export const FinalAmount = styled.div`
   font-size: 1.7rem;
   font-weight: 500;
   ${mobile({ margin: "20px" })}
-`;
-export const Summary = styled.div`
-  flex: 1;
-  border: 1px solid teal;
-  height: 47vh;
-  border-radius: 0.8rem;
-  padding: 1.5rem;
-`;
-export const SummaryHeading = styled.h1`
-  font-size: 1.6rem;
-  font-weight: 300;
-  text-align: center;
-  letter-spacing: 1.5px;
-  margin-bottom: 1rem;
-`;
-export const SummaryProduct = styled.div`
-  margin: 2rem 0rem;
-  display: flex;
-  justify-content: space-between;
-  letter-spacing: 1.5px;
-  font-weight: ${(props) => props.type === "total" && "600"};
-  font-size: ${(props) => props.type === "total" && "22px"};
-`;
-export const SummaryText = styled.span``;
-export const SummaryPrice = styled.span``;
-
-export const Checkout = styled.button`
-  padding: 0.8rem;
-  width: 100%;
-  background-color: teal;
-  color: white;
-  font-size: 1.3rem;
-  font-weight: 500;
-  letter-spacing: 1.5px;
-  border: none;
-  ${mobile({ fontSize: "0.8rem" })}
 `;
