@@ -1,13 +1,4 @@
 import { v4 as uuid } from "uuid";
-import image1 from "../../assets/keyboard-1.jpg";
-import image2 from "../../assets/keyboard-2.jpg";
-import image3 from "../../assets/keyboard-3.jpg";
-import image4 from "../../assets/keyboard-4.jpg";
-import image5 from "../../assets/keyboard-5.jpg";
-import image6 from "../../assets/keyboard-6.jpg";
-import image7 from "../../assets/keyboard-7.jpg";
-import image8 from "../../assets/keyboard-8.jpg";
-import image9 from "../../assets/keyboard-9.jpg";
 
 /**
  * Product Database can be added here.
@@ -20,7 +11,7 @@ export const products = [
     title: "Floral Dress",
     subTitle: "Dress",
     price: 7699,
-    categoryName: "Women Wear",
+    categoryName: "Women-Wear",
     image:
       "https://images.pexels.com/photos/985635/pexels-photo-985635.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
     upcoming: true,
@@ -31,7 +22,7 @@ export const products = [
     title: "Floral Dress",
     subTitle: "dress",
     price: 3199,
-    categoryName: "Women Wear",
+    categoryName: "Women-Wear",
     image:
       "https://images.pexels.com/photos/1055691/pexels-photo-1055691.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
     upcoming: true,
@@ -41,7 +32,7 @@ export const products = [
     _id: uuid(),
     title: "Floral Dress",
     price: 2600,
-    categoryName: "Women Wear",
+    categoryName: "Women-Wear",
     image:
       "https://images.pexels.com/photos/2065195/pexels-photo-2065195.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
     upcoming: false,
@@ -51,7 +42,7 @@ export const products = [
     _id: uuid(),
     title: "Dress",
     price: 2000,
-    categoryName: "Women Wear",
+    categoryName: "Women-Wear",
     image:
       "https://images.pexels.com/photos/2235071/pexels-photo-2235071.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
     upcoming: true,
@@ -81,7 +72,7 @@ export const products = [
     _id: uuid(),
     title: "T-Shirts",
     price: 18999,
-    categoryName: "Women Wear",
+    categoryName: "Women-Wear",
     image:
       "https://images.pexels.com/photos/1852382/pexels-photo-1852382.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
     upcoming: true,
