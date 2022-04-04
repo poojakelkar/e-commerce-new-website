@@ -1,4 +1,5 @@
 import { DeleteOutlined } from "@material-ui/icons";
+import image1 from "../../assets/whishlist1.jpeg";
 import React from "react";
 import { Link } from "react-router-dom";
 import { useCounter } from "../../counterContext";
@@ -59,7 +60,7 @@ const Wishlist = () => {
           <Text>
             <Product>
               <ProductDetails>
-                <ProductImage src="https://images.pexels.com/photos/1839904/pexels-photo-1839904.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"></ProductImage>
+                <ProductImage src={image1}></ProductImage>
                 <ProductInfo>
                   <Name>
                     <b>Product: </b>JUMPSUIT FOR WOMEN

@@ -1,5 +1,6 @@
-import React, { useContext, useEffect, useState } from "react";
-import { Link, useNavigate, useParams } from "react-router-dom";
+import { Link } from "react-router-dom";
+import image1 from "../../assets/whishlist1.jpeg";
+import image2 from "../../assets/whishlist2.jpeg";
 import { Announce } from "../../womenFrontPage/Announce/index";
 import { Footer } from "../../womenFrontPage/Footer/index";
 import { LastFooter } from "../../womenFrontPage/LastFooter/index";
@@ -65,7 +66,7 @@ const WomenCart = () => {
           <Text>
             <Product>
               <ProductDetails>
-                <ProductImage src="https://images.pexels.com/photos/1839904/pexels-photo-1839904.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"></ProductImage>
+                <ProductImage src={image1}></ProductImage>
                 <ProductInfo>
                   <Name>
                     <b>Product: </b>JUMPSUIT FOR WOMEN
@@ -93,7 +94,7 @@ const WomenCart = () => {
             <Hr />
             <Product>
               <ProductDetails>
-                <ProductImage src="https://images.pexels.com/photos/852860/pexels-photo-852860.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"></ProductImage>
+                <ProductImage src={image2}></ProductImage>
                 <ProductInfo>
                   <Name>
                     <b>Product: </b>SHRUG FOR WOMEN
