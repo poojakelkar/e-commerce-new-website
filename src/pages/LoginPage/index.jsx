@@ -68,7 +68,7 @@ const Login = () => {
 
           <Button onClick={loginUser}>LOGIN</Button>
           <Link
-            to="/forget-password"
+            to="/forgot-password"
             style={{ textDecoration: "none", color: "teal" }}
           >
             <LinkForget>FORGET PASSWORD</LinkForget>
