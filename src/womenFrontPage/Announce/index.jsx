@@ -1,3 +1,5 @@
+import { Container } from "./styles";
+
 export const Announce = () => {
-  <div>Announcement</div>;
+  return <Container>Superb Offer! Free shipping over 1000rs.</Container>;
 };
