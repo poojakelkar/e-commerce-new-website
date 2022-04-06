@@ -1,5 +1,5 @@
-import React, { useContext, useEffect, useState } from "react";
-import { Link, useNavigate, useParams } from "react-router-dom";
+import React from "react";
+import { Link } from "react-router-dom";
 import { Announce } from "../../womenFrontPage/Announce/index";
 import { Footer } from "../../womenFrontPage/Footer/index";
 import { LastFooter } from "../../womenFrontPage/LastFooter/index";

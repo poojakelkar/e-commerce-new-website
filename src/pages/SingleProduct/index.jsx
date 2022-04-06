@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useState } from "react";
-import { Link, useNavigate, useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { addToCart } from "../../CardService";
 import { StateContext } from "../../Context";
 import { Announce } from "../../womenFrontPage/Announce/index";

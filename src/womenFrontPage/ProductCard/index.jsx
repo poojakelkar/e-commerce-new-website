@@ -1,7 +1,6 @@
 import { Favorite } from "@material-ui/icons";
-import React, { useContext, useState } from "react";
+import React from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { StateContext } from "../../Context";
 import {
   Button,
   Card,

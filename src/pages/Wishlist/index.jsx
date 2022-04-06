@@ -1,7 +1,6 @@
 import { DeleteOutlined } from "@material-ui/icons";
 import React from "react";
 import { Link } from "react-router-dom";
-import { useCounter } from "../../counterContext";
 import { Announce } from "../../womenFrontPage/Announce/index";
 import { Footer } from "../../womenFrontPage/Footer/index";
 import { LastFooter } from "../../womenFrontPage/LastFooter/index";
@@ -31,7 +30,6 @@ import {
 } from "./styles";
 
 const Wishlist = () => {
-  const { state, dispatcher } = useCounter();
   return (
     <Container>
       <Announce></Announce>
