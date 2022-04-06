@@ -26,7 +26,7 @@ function App() {
       }
     }
     fetchData();
-  }, []);
+  }, [state, dispatch]);
 
   return (
     <>
