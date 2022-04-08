@@ -1,6 +1,7 @@
 import { Favorite } from "@material-ui/icons";
 import React, { useContext, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
+import { addToCart, updateProductQty } from "../../CardService";
 import { StateContext } from "../../Context";
 import {
   Button,
@@ -16,17 +17,38 @@ import {
 } from "./styles";
 
 const ProductCard = ({ item }) => {
+  const { state, dispatch } = useContext(StateContext);
   let navigate = useNavigate();
-
-  const handleAddToCart = () => {
-    navigate("/cart");
+  const [cartButtonText, setCartButtonText] = useState("ADD TO CART");
+  const handleAddToCart = (e) => {
+    // https://developer.mozilla.org/en-US/docs/Web/API/Event/stopPropagation
+    const isItemPresent = state.cart.find(
+      (itemInCart) => itemInCart._id === item._id
+    );
+    if (cartButtonText === "ADD TO CART") {
+      if (!isItemPresent) {
+        addToCart(item, dispatch);
+        setCartButtonText("GO TO CART");
+      } else {
+        const isItemPresentInWishList = state.wishlist.find(
+          (itemInWishlist) => itemInWishlist._id === item._id
+        );
+        if (isItemPresentInWishList !== undefined) {
+          updateProductQty(item._id, dispatch, "increment");
+        }
+        setCartButtonText("GO TO CART");
+      }
+    } else {
+      navigate("/cart");
+    }
   };
 
   const openSingleProductPage = (e) => {
-    console.log(e.target.className);
-    if (e.target.className !== { Button }) {
-      navigate(`/product/${item._id}`);
-    }
+    // alert("openSingleProductPage");
+    // console.log(e.target.className);
+    // if (e.target.className !== { Button }) {
+    //   navigate(`/product/${item._id}`);
+    // }
   };
 
   return (
@@ -44,7 +66,7 @@ const ProductCard = ({ item }) => {
                 <Favorite />
               </Wishlist>
             </Link>
-            <Button onClick={handleAddToCart}>Add to Cart</Button>
+            <Button onClick={handleAddToCart}>{cartButtonText}</Button>
           </WishListAndAddToCart>
         </ProductImg>
       </Card>

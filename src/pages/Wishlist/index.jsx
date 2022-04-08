@@ -1,6 +1,6 @@
 import { DeleteOutlined } from "@material-ui/icons";
 import image1 from "../../assets/whishlist1.jpeg";
-import React from "react";
+import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import { useCounter } from "../../counterContext";
 import { Announce } from "../../womenFrontPage/Announce/index";
@@ -30,9 +30,12 @@ import {
   TopText,
   Wrapper,
 } from "./styles";
+import { StateContext } from "../../Context";
+import ProductCard from "../../womenFrontPage/ProductCard";
 
 const Wishlist = () => {
-  const { state, dispatcher } = useCounter();
+  const { state } = useContext(StateContext);
+
   return (
     <Container>
       <Announce></Announce>
@@ -60,7 +63,7 @@ const Wishlist = () => {
           <Text>
             <Product>
               <ProductDetails>
-                <ProductImage src={image1}></ProductImage>
+                {/* <ProductImage src={image1}></ProductImage>
                 <ProductInfo>
                   <Name>
                     <b>Product: </b>JUMPSUIT FOR WOMEN
@@ -72,14 +75,26 @@ const Wishlist = () => {
                   <Size>
                     <b>Product: </b>32.5
                   </Size>
-                </ProductInfo>
+                </ProductInfo> */}
+
+                {state.wishlist.length === 0 ? (
+                  <>
+                    <h4>Your wishlist is empty!</h4>
+                  </>
+                ) : (
+                  <>
+                    {state.wishlist.map((item) => (
+                      <ProductCard item={item} />
+                    ))}
+                  </>
+                )}
               </ProductDetails>
-              <Price>
+              {/* <Price>
                 <DeleteProduct>
                   <DeleteOutlined />
                 </DeleteProduct>
                 <FinalAmount>RS. 1600</FinalAmount>
-              </Price>
+              </Price> */}
             </Product>
             <Hr />
           </Text>

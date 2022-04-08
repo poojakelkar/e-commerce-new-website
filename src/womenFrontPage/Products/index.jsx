@@ -3,27 +3,41 @@ import {
   SearchOutlined,
   ShoppingCartOutlined,
 } from "@material-ui/icons";
-import React from "react";
+import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import { Container, Heading, Icon, Image } from "./styles";
+import { StateContext } from "../../Context";
 
-export const Products = ({ item }) => {
+export const Products = () => {
+  const { state, dispatch } = useContext(StateContext);
   return (
-    <Container>
-      <Image src={item.img}></Image>
-      <Link to="/product-list">
-        <Heading>
-          <Icon>
-            <ShoppingCartOutlined></ShoppingCartOutlined>
-          </Icon>
-          <Icon>
-            <SearchOutlined></SearchOutlined>
-          </Icon>
-          <Icon>
-            <FavoriteBorderOutlined></FavoriteBorderOutlined>
-          </Icon>
-        </Heading>
-      </Link>
-    </Container>
+    <>
+      {state.categories.map((item) => {
+        return (
+          <Container key={item._id}>
+            <Image src={item.image}></Image>
+            <Link
+              to="/product-list"
+              className="links"
+              onClick={(e) =>
+                dispatch({ type: "SET_CATEGORY", payload: item.categoryName })
+              }
+            >
+              <Heading>
+                <Icon>
+                  <ShoppingCartOutlined></ShoppingCartOutlined>
+                </Icon>
+                <Icon>
+                  <SearchOutlined></SearchOutlined>
+                </Icon>
+                <Icon>
+                  <FavoriteBorderOutlined></FavoriteBorderOutlined>
+                </Icon>
+              </Heading>
+            </Link>
+          </Container>
+        );
+      })}
+    </>
   );
 };

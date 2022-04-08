@@ -7,11 +7,7 @@ import { Footer } from "../../womenFrontPage/Footer/index";
 import { LastFooter } from "../../womenFrontPage/LastFooter/index";
 import { Nav } from "../../womenFrontPage/Nav/index";
 import {
-  Add,
-  AddContainer,
   AddToCart,
-  Amount,
-  AmountContainer,
   Color,
   ColorFilter,
   ColorTitle,
@@ -24,17 +20,18 @@ import {
   ProductImage,
   ProductSize,
   Size,
-  Sub,
   Title,
   Wrapper,
+  AddToWishlist,
 } from "./styles";
+import { handleAddToWishlist } from "../../wishlistServices.js";
 
 const SingleProduct = () => {
-  const navigate = useNavigate();
+  let navigate = useNavigate();
   const { productId } = useParams();
   const [productItem, setProductItem] = useState({});
   const { state, dispatch } = useContext(StateContext);
-  //product/product_id
+
   useEffect(() => {
     async function fetchData() {
       try {
@@ -49,12 +46,6 @@ const SingleProduct = () => {
     }
     fetchData();
   }, [productId]);
-
-  const handleAddToCart = () => {
-    const isItemPresent = state.cart.find((item) => item._id === productId);
-    isItemPresent === undefined && addToCart(productItem, dispatch);
-    navigate("/cart");
-  };
 
   console.log(productItem);
   return (
@@ -95,15 +86,8 @@ const SingleProduct = () => {
               <ProductSize>XL</ProductSize>
             </Size>
           </Filter>
-
-          <AddContainer>
-            <AmountContainer>
-              <Sub>-</Sub>
-              <Amount>1</Amount>
-              <Add>+</Add>
-            </AmountContainer>
-            <AddToCart onClick={handleAddToCart}>Add To Cart</AddToCart>
-          </AddContainer>
+          <AddToWishlist>Add To Wishlist</AddToWishlist>
+          <AddToCart>Add To Cart</AddToCart>
         </InfoContainer>
       </Wrapper>
 

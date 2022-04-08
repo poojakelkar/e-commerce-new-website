@@ -1,5 +1,5 @@
 import React from "react";
-import { useReducer, useEffect } from "react";
+import { useReducer } from "react";
 import { createContext } from "react";
 import stateReducer from "./Reducer";
 
@@ -20,6 +20,11 @@ const Context = ({ children }) => {
     cart: [],
     wishlist: [],
     tag: null,
+    showtoast: false,
+    address: [],
+    showAddressModal: false,
+    addressEditMode: false,
+    addressToBeEdited: {},
   });
 
   return (

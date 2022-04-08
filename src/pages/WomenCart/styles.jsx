@@ -121,6 +121,11 @@ export const FinalAmount = styled.div`
   font-weight: 500;
   ${mobile({ margin: "20px" })}
 `;
+
+export const ButtonContainer = styled.div``;
+export const AddtoWishlist = styled.button``;
+export const RemoveFromCart = styled.button``;
+
 export const Summary = styled.div`
   flex: 1;
   border: 1px solid teal;
