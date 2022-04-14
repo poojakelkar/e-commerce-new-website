@@ -1,21 +1,17 @@
 import { DeleteOutlined } from "@material-ui/icons";
-import image1 from "../../assets/whishlist1.jpeg";
 import React, { useContext } from "react";
 import { Link } from "react-router-dom";
-import { useCounter } from "../../counterContext";
 import { Announce } from "../../womenFrontPage/Announce/index";
 import { Footer } from "../../womenFrontPage/Footer/index";
 import { LastFooter } from "../../womenFrontPage/LastFooter/index";
 import { Nav } from "../../womenFrontPage/Nav/index";
 import {
   Bottom,
-  Color,
   Container,
   DeleteProduct,
   FinalAmount,
   Heading,
   Hr,
-  Id,
   Name,
   Price,
   Product,
@@ -33,7 +29,7 @@ import {
 import { StateContext } from "../../Context";
 import ProductCard from "../../womenFrontPage/ProductCard";
 
-const Wishlist = () => {
+const Wishlist = ({ item }) => {
   const { state } = useContext(StateContext);
 
   return (
@@ -50,9 +46,9 @@ const Wishlist = () => {
           </Link>
           <TopHeading>
             <Link to="/cart" style={{ textDecoration: "none" }}>
-              <TopText>Shopping Bag(2)</TopText>
+              <TopText>Shopping Bag({state.cart.length})</TopText>
             </Link>
-            <TopText>Your Wishlist(1)</TopText>
+            <TopText>Your Wishlist({state.wishlist.length})</TopText>
           </TopHeading>
           <Link to="/cart">
             <ShoppingButton type="filled">CHECKOUT NOW</ShoppingButton>
@@ -61,41 +57,38 @@ const Wishlist = () => {
 
         <Bottom>
           <Text>
-            <Product>
-              <ProductDetails>
-                {/* <ProductImage src={image1}></ProductImage>
-                <ProductInfo>
-                  <Name>
-                    <b>Product: </b>JUMPSUIT FOR WOMEN
-                  </Name>
-                  <Id>
-                    <b>Product: </b>11022
-                  </Id>
-                  <Color color="pink" />
-                  <Size>
-                    <b>Product: </b>32.5
-                  </Size>
-                </ProductInfo> */}
-
-                {state.wishlist.length === 0 ? (
-                  <>
-                    <h4>Your wishlist is empty!</h4>
-                  </>
-                ) : (
-                  <>
-                    {state.wishlist.map((item) => (
+            {" "}
+            {state.wishlist.length === 0 ? (
+              <>
+                <h4>Your wishlist is empty!</h4>
+              </>
+            ) : (
+              <>
+                {state.wishlist.map((item) => (
+                  <Product>
+                    <ProductDetails>
+                      <ProductImage src={item.image}></ProductImage>
+                      <ProductInfo>
+                        <Name>
+                          <b>Product: </b>
+                          {item.title}
+                        </Name>
+                        <Size>
+                          <b>Product: </b>32.5
+                        </Size>
+                      </ProductInfo>
                       <ProductCard item={item} />
-                    ))}
-                  </>
-                )}
-              </ProductDetails>
-              {/* <Price>
-                <DeleteProduct>
-                  <DeleteOutlined />
-                </DeleteProduct>
-                <FinalAmount>RS. 1600</FinalAmount>
-              </Price> */}
-            </Product>
+                      <Price>
+                        <DeleteProduct>
+                          <DeleteOutlined />
+                        </DeleteProduct>
+                        <FinalAmount>RS. {item.price}</FinalAmount>
+                      </Price>
+                    </ProductDetails>
+                  </Product>
+                ))}
+              </>
+            )}
             <Hr />
           </Text>
         </Bottom>

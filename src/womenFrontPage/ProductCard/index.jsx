@@ -1,8 +1,9 @@
 import { Favorite } from "@material-ui/icons";
 import React, { useContext, useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
-import { addToCart, updateProductQty } from "../../CardService";
+import { useNavigate } from "react-router-dom";
+import { addToCart, removeFromCart, updateProductQty } from "../../CardService";
 import { StateContext } from "../../Context";
+import { addToWishlist, handleAddToWishlist } from "../../wishlistServices";
 import {
   Button,
   Card,
@@ -21,7 +22,6 @@ const ProductCard = ({ item }) => {
   let navigate = useNavigate();
   const [cartButtonText, setCartButtonText] = useState("ADD TO CART");
   const handleAddToCart = (e) => {
-    // https://developer.mozilla.org/en-US/docs/Web/API/Event/stopPropagation
     const isItemPresent = state.cart.find(
       (itemInCart) => itemInCart._id === item._id
     );
@@ -33,7 +33,8 @@ const ProductCard = ({ item }) => {
         const isItemPresentInWishList = state.wishlist.find(
           (itemInWishlist) => itemInWishlist._id === item._id
         );
-        if (isItemPresentInWishList !== undefined) {
+        if (!isItemPresentInWishList) {
+          addToWishlist(item, dispatch);
           updateProductQty(item._id, dispatch, "increment");
         }
         setCartButtonText("GO TO CART");
@@ -43,12 +44,21 @@ const ProductCard = ({ item }) => {
     }
   };
 
+  const handleAddToWishlist = (wishlist, item, dispatch) => {
+    const isItemPresent = wishlist.find(
+      (itemInWishlist) => itemInWishlist._id === item._id
+    );
+    if (!isItemPresent) {
+      addToWishlist(item, dispatch);
+      removeFromCart(item._id, dispatch);
+    }
+  };
+
   const openSingleProductPage = (e) => {
-    // alert("openSingleProductPage");
-    // console.log(e.target.className);
-    // if (e.target.className !== { Button }) {
-    //   navigate(`/product/${item._id}`);
-    // }
+    console.log(e.target.className);
+    if (e.target.className !== { Button }) {
+      navigate(`/product/${item._id}`);
+    }
   };
 
   return (
@@ -61,11 +71,9 @@ const ProductCard = ({ item }) => {
             <CategoryName>Rs.{item?.price}</CategoryName>
           </ImgInfo>
           <WishListAndAddToCart>
-            <Link to="/wishlist">
-              <Wishlist>
-                <Favorite />
-              </Wishlist>
-            </Link>
+            <Wishlist onClick={handleAddToWishlist}>
+              <Favorite></Favorite>
+            </Wishlist>
             <Button onClick={handleAddToCart}>{cartButtonText}</Button>
           </WishListAndAddToCart>
         </ProductImg>

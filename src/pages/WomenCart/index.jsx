@@ -67,9 +67,9 @@ const WomenCart = () => {
               <ShoppingButton>CONTINUE SHOPPING</ShoppingButton>
             </Link>
             <TopHeading>
-              <TopText>Shopping Bag(2)</TopText>
+              <TopText>Shopping Bag({state.cart.length})</TopText>
               <Link to="/wishlist" style={{ textDecoration: "none" }}>
-                <TopText>Your Wishlist(1)</TopText>
+                <TopText>Your Wishlist({state.wishlist.length})</TopText>
               </Link>
             </TopHeading>
             <ShoppingButton type="filled">CHECKOUT NOW</ShoppingButton>
@@ -94,7 +94,7 @@ const WomenCart = () => {
                               <b>Product: </b>
                               {item.title}
                             </Name>
-                            <Color color="pink" />
+                            <Color>Available Color: {item.color}</Color>
                             <Size>
                               <b>Product: </b>32.5
                             </Size>
@@ -132,12 +132,7 @@ const WomenCart = () => {
                         <ButtonContainer>
                           <AddtoWishlist
                             onClick={(e) =>
-                              handleAddToWishlist(
-                                state.wishlist,
-                                item,
-                                dispatch,
-                                null
-                              )
+                              handleAddToWishlist(item._id, dispatch)
                             }
                           >
                             Add To Wishlist

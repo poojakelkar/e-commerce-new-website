@@ -1,6 +1,5 @@
 import React, { useContext, useEffect, useState } from "react";
-import { Link, useNavigate, useParams } from "react-router-dom";
-import { addToCart } from "../../CardService";
+import { useNavigate, useParams } from "react-router-dom";
 import { StateContext } from "../../Context";
 import { Announce } from "../../womenFrontPage/Announce/index";
 import { Footer } from "../../womenFrontPage/Footer/index";
@@ -8,6 +7,7 @@ import { LastFooter } from "../../womenFrontPage/LastFooter/index";
 import { Nav } from "../../womenFrontPage/Nav/index";
 import {
   AddToCart,
+  AddToWishlist,
   Color,
   ColorFilter,
   ColorTitle,
@@ -22,9 +22,7 @@ import {
   Size,
   Title,
   Wrapper,
-  AddToWishlist,
 } from "./styles";
-import { handleAddToWishlist } from "../../wishlistServices.js";
 
 const SingleProduct = () => {
   let navigate = useNavigate();

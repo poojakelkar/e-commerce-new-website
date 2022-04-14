@@ -25,6 +25,9 @@ export const products = [
     image: dress1,
     upcoming: true,
     rating: 5,
+    quantity: 0,
+    avalQty: 10,
+    color: "red",
   },
   {
     _id: uuid(),
@@ -35,6 +38,9 @@ export const products = [
     image: dress2,
     upcoming: true,
     rating: 5,
+    quantity: 0,
+    avalQty: 10,
+    color: "pink",
   },
   {
     _id: uuid(),
@@ -44,6 +50,9 @@ export const products = [
     image: dress3,
     upcoming: false,
     rating: 4,
+    quantity: 0,
+    avalQty: 10,
+    color: "yellow",
   },
   {
     _id: uuid(),
@@ -53,6 +62,9 @@ export const products = [
     image: dress5,
     upcoming: true,
     rating: 4,
+    quantity: 0,
+    avalQty: 10,
+    color: "blue",
   },
   {
     _id: uuid(),
@@ -62,6 +74,8 @@ export const products = [
     image: shoes1,
     upcoming: true,
     rating: 5,
+    quantity: 0,
+    avalQty: 10,
   },
   {
     _id: uuid(),
@@ -71,6 +85,8 @@ export const products = [
     image: bag1,
     upcoming: true,
     rating: 3.5,
+    quantity: 0,
+    avalQty: 10,
   },
   {
     _id: uuid(),
@@ -80,6 +96,8 @@ export const products = [
     image: dress4,
     upcoming: true,
     rating: 3,
+    quantity: 0,
+    avalQty: 10,
   },
   {
     _id: uuid(),
@@ -89,6 +107,8 @@ export const products = [
     image: makeup3,
     upcoming: true,
     rating: 2,
+    quantity: 0,
+    avalQty: 10,
   },
   {
     _id: uuid(),
@@ -98,6 +118,8 @@ export const products = [
     image: makeup1,
     upcoming: false,
     rating: 1,
+    quantity: 0,
+    avalQty: 10,
   },
   {
     _id: uuid(),
@@ -107,6 +129,8 @@ export const products = [
     image: makeup2,
     upcoming: false,
     rating: 3,
+    quantity: 0,
+    avalQty: 10,
   },
   {
     _id: uuid(),
@@ -116,5 +140,7 @@ export const products = [
     image: hygiene,
     upcoming: false,
     rating: 4,
+    quantity: 0,
+    avalQty: 10,
   },
 ];
