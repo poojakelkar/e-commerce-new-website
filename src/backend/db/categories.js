@@ -8,11 +8,11 @@ import { v4 as uuid } from "uuid";
 export const categories = [
   {
     _id: uuid(),
-    categoryName: "Women Wear",
+    categoryName: "Women-Wear",
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
     image:
-      "https://images.squarespace-cdn.com/content/v1/6116b9604a8e6b639a58a447/1628879296895-1TLQSVAHTVXF5EPTJA5H/epbt_abs-doubleshot-keycaps_olivetti.jpg?format=750w",
+      "https://images.unsplash.com/photo-1532453288672-3a27e9be9efd?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=464&q=80",
   },
   {
     _id: uuid(),
@@ -20,7 +20,7 @@ export const categories = [
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
     image:
-      "https://images.squarespace-cdn.com/content/v1/6116b9604a8e6b639a58a447/1628879296885-YJF9K6IA8YJDZA0Q6Y2M/tkc_godspeed75_keyboard_75-percent_1200.jpg?format=300w",
+      "https://images.unsplash.com/photo-1534653299134-96a171b61581?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=675&q=80",
   },
   {
     _id: uuid(),
@@ -28,7 +28,7 @@ export const categories = [
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
     image:
-      "https://images.squarespace-cdn.com/content/v1/6116b9604a8e6b639a58a447/1628879296888-66OU4S7N2WDSFNMU49D2/Portico_DSA-Magic-Girl_overhead.jpg?format=300whttps://images.squarespace-cdn.com/content/v1/6116b9604a8e6b639a58a447/1628879296888-66OU4S7N2WDSFNMU49D2/Portico_DSA-Magic-Girl_overhead.jpg?format=300w",
+      "https://images.unsplash.com/photo-1628149455678-16f37bc392f4?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NHx8d29tZW4lMjBiYWd8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60",
   },
   {
     _id: uuid(),
@@ -36,7 +36,7 @@ export const categories = [
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
     image:
-      "https://images.squarespace-cdn.com/content/v1/6116b9604a8e6b639a58a447/1628879296892-8ABQBYHMJ4BFSYOV0O8W/Infinikey-Graen_minivan_overhead_1920x1080.jpg?format=300w",
+      "https://images.unsplash.com/photo-1515688594390-b649af70d282?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1106&q=80",
   },
   {
     _id: uuid(),
@@ -44,6 +44,6 @@ export const categories = [
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
     image:
-      "https://images.squarespace-cdn.com/content/v1/6116b9604a8e6b639a58a447/1628879296918-JG32PS2HTJR94Z9X1U0P/Infinikey-LedZep_OSA-grey-wood.jpg?format=300w",
+      "https://images.unsplash.com/photo-1607185073253-44296286cd82?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NXx8d29tZW4lMjBoeWdpZW5lfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60",
   },
 ];
