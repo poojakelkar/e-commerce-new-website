@@ -30,6 +30,19 @@ export const SearchContainer = styled.div`
   margin-left: 1rem;
   padding: 0.3rem;
 `;
+export const Loginbtn = styled.button`
+  background-color: teal;
+  color: white;
+  font-size: 1rem;
+  font-weight: 500;
+  border: none;
+  padding: 0.6rem;
+  ${mobile({ fontSize: "0.8rem" })}
+
+  &:hover {
+    background-color: #66b2b2;
+  }
+`;
 export const Input = styled.input`
   border: none;
   ${mobile({ width: "2rem" })}
@@ -52,7 +65,7 @@ export const Right = styled.div`
 export const Item = styled.div`
   font-size: 1rem;
   cursor: pointer;
-  margin-left: 2rem;
+  margin: 0rem 2rem;
   ${mobile({ fontSize: "0.5rem", marginLeft: "0.3rem" })}
 `;
 
