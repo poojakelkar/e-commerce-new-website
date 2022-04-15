@@ -8,7 +8,6 @@ export const addToCart = (item, dispatch) => {
 
 export const updateProductQty = async (id, dispatch, actionType) => {
   try {
-    console.log("clicked abcbac 1");
     dispatch({ type: actionType, payload: id });
   } catch (error) {
     console.log("Error in updateQtyFromCart service", error);
@@ -17,9 +16,6 @@ export const updateProductQty = async (id, dispatch, actionType) => {
 
 export const removeFromCart = async (id, dispatch) => {
   try {
-    // const {
-    //   data: { cart },
-    // } = await axios.delete(`api/user/cart/${id}`);
     dispatch({ type: "REMOVE_FROM_CART", payload: id });
   } catch (error) {
     console.log("Error in cart service", error);
