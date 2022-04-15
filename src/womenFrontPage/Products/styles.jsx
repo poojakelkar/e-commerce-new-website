@@ -16,7 +16,7 @@ export const Heading = styled.div`
 export const Container = styled.div`
   flex: 1;
   margin: 0rem 0.2rem;
-  min-width: 20rem;
+  min-width: 14rem;
   height: 25rem;
   display: flex;
   align-items: center;
