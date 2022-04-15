@@ -39,12 +39,10 @@ const ProductItems = () => {
         <ProductDisplayContainer>
           {filteredData.length === 0 ? (
             <>
-              {" "}
               <h2 class="sub-heading">No products found!</h2>
             </>
           ) : (
             <>
-              {" "}
               <ProductContainer>
                 {filteredData.map((item) => (
                   <ProductCard item={item} />
