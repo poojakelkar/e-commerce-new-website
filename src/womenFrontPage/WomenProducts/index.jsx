@@ -1,6 +1,4 @@
 import React from "react";
-
-import { product } from "../../data";
 import { Products } from "../Products/index";
 import { Container, Head } from "./styles";
 
@@ -9,9 +7,7 @@ const WomenProducts = () => {
     <div>
       <Head>WOMEN CATEGORY</Head>
       <Container>
-        {product.map((item) => (
-          <Products item={item} key={item.id}></Products>
-        ))}
+        <Products></Products>
       </Container>
     </div>
   );
