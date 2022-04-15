@@ -1,6 +1,9 @@
 import { Favorite } from "@material-ui/icons";
-import React from "react";
-import { Link, useNavigate } from "react-router-dom";
+import React, { useContext, useState } from "react";
+import { useNavigate } from "react-router-dom";
+import { addToCart, removeFromCart, updateProductQty } from "../../CardService";
+import { StateContext } from "../../Context";
+import { addToWishlist } from "../../wishlistServices";
 import {
   Button,
   Card,
@@ -15,10 +18,40 @@ import {
 } from "./styles";
 
 const ProductCard = ({ item }) => {
+  const { state, dispatch } = useContext(StateContext);
   let navigate = useNavigate();
+  const [cartButtonText, setCartButtonText] = useState("ADD TO CART");
+  const handleAddToCart = (e) => {
+    const isItemPresent = state.cart.find(
+      (itemInCart) => itemInCart._id === item._id
+    );
+    if (cartButtonText === "ADD TO CART") {
+      if (!isItemPresent) {
+        addToCart(item, dispatch);
+        setCartButtonText("GO TO CART");
+      } else {
+        const isItemPresentInWishList = state?.wishlist?.find(
+          (itemInWishlist) => itemInWishlist._id === item._id
+        );
+        if (!isItemPresentInWishList) {
+          addToWishlist(item, dispatch);
+          updateProductQty(item._id, dispatch, "increment");
+        }
+        setCartButtonText("GO TO CART");
+      }
+    } else {
+      navigate("/cart");
+    }
+  };
 
-  const handleAddToCart = () => {
-    navigate("/cart");
+  const handleAddToWishlist = (wishlist, item, dispatch) => {
+    const isItemPresent = wishlist?.find(
+      (itemInWishlist) => itemInWishlist._id === item._id
+    );
+    if (!isItemPresent) {
+      addToWishlist(item, dispatch);
+      removeFromCart(item._id, dispatch);
+    }
   };
 
   const openSingleProductPage = (e) => {
@@ -38,12 +71,14 @@ const ProductCard = ({ item }) => {
             <CategoryName>Rs.{item?.price}</CategoryName>
           </ImgInfo>
           <WishListAndAddToCart>
-            <Link to="/wishlist">
-              <Wishlist>
-                <Favorite />
-              </Wishlist>
-            </Link>
-            <Button onClick={handleAddToCart}>Add to Cart</Button>
+            <Wishlist
+              onClick={() =>
+                handleAddToWishlist(state.wishlist, item, dispatch)
+              }
+            >
+              <Favorite></Favorite>
+            </Wishlist>
+            <Button onClick={handleAddToCart}>{cartButtonText}</Button>
           </WishListAndAddToCart>
         </ProductImg>
       </Card>
