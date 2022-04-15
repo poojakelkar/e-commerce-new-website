@@ -1,4 +1,3 @@
-import axios from "axios";
 export const addToCart = (item, dispatch) => {
   try {
     dispatch({ type: "SET_CART", payload: item });
