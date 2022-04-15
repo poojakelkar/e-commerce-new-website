@@ -22,10 +22,7 @@ export const addToWishlist = (item, dispatch) => {
 
 export const removeFromWishlist = async (id, dispatch) => {
   try {
-    const {
-      data: { wishlist },
-    } = await axios.delete(`api/user/wishlist/${id}`);
-    dispatch({ type: "SET_WISHLIST", payload: wishlist });
+    dispatch({ type: "REMOVE_FROM_WISHLIST", payload: id });
   } catch (error) {
     console.log("Error in wishlist service", error);
   }

@@ -80,6 +80,11 @@ const stateReducer = (state, action) => {
       return { ...state, cart: cart };
     case "SET_WISHLIST":
       return { ...state, wishlist: [...state.wishlist, action.payload] };
+    case "REMOVE_FROM_WISHLIST":
+      const wishlist = state?.wishlist?.filter(
+        (item) => item._id !== action.payload
+      );
+      return { ...state, wishlist: wishlist };
     case "SET_TAG":
       return { ...state, tag: action.payload };
     case "SET_SHOW_TOAST":
@@ -109,7 +114,6 @@ const stateReducer = (state, action) => {
         ),
       };
     case "INCREMENT_QUANTITY":
-      console.log("INCREMENT_QUANTITY");
       const clonedState = { ...state };
       let cartData = clonedState?.cart;
       if (cartData?.length) {
@@ -119,16 +123,16 @@ const stateReducer = (state, action) => {
         if (productIndex > -1) {
           const currentQty = cartData[productIndex]?.quantity ?? 0;
           const newQty = currentQty + 1;
-          console.log({ newQty });
           cartData[productIndex] = {
             ...cartData[productIndex],
             quantity: newQty,
           };
-          console.log({ newQty: cartData[productIndex]?.quantity });
-          clonedState.cart = [...cartData];
         }
+
+        clonedState.cart = [...cartData];
       }
       return { ...clonedState };
+
     case "DECREMENT_QUANTITY":
       const clonedData = { ...state };
       if (clonedData?.cart?.length) {

@@ -1,12 +1,14 @@
-import { DeleteOutlined } from "@material-ui/icons";
-import React, { useContext } from "react";
-import { Link } from "react-router-dom";
+import { DeleteOutlined, Star } from "@material-ui/icons";
+import React, { useContext, useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
 import { Announce } from "../../womenFrontPage/Announce/index";
 import { Footer } from "../../womenFrontPage/Footer/index";
 import { LastFooter } from "../../womenFrontPage/LastFooter/index";
 import { Nav } from "../../womenFrontPage/Nav/index";
 import {
   Bottom,
+  Button,
+  Category,
   Container,
   DeleteProduct,
   FinalAmount,
@@ -27,11 +29,28 @@ import {
   Wrapper,
 } from "./styles";
 import { StateContext } from "../../Context";
-import ProductCard from "../../womenFrontPage/ProductCard";
+import { removeFromWishlist } from "../../wishlistServices";
+import { addToCart, updateProductQty } from "../../CardService";
 
 const Wishlist = ({ item }) => {
-  const { state } = useContext(StateContext);
-
+  const { state, dispatch } = useContext(StateContext);
+  let navigate = useNavigate();
+  const [cartButtonText, setCartButtonText] = useState("ADD TO CART");
+  const handleAddToCart = (e) => {
+    const isItemPresent = state.cart.find(
+      (itemInCart) => itemInCart._id === item._id
+    );
+    if (cartButtonText === "ADD TO CART") {
+      if (!isItemPresent) {
+        addToCart(item, dispatch);
+        setCartButtonText("GO TO CART");
+        updateProductQty(item._id, dispatch, "increment");
+        setCartButtonText("GO TO CART");
+      }
+    } else {
+      navigate("/cart");
+    }
+  };
   return (
     <Container>
       <Announce></Announce>
@@ -76,13 +95,23 @@ const Wishlist = ({ item }) => {
                         <Size>
                           <b>Product: </b>32.5
                         </Size>
+                        <Category>
+                          Product Ratings: <Star style={{ color: "orange" }} />
+                          {item.rating}
+                        </Category>
                       </ProductInfo>
-                      <ProductCard item={item} />
                       <Price>
                         <DeleteProduct>
-                          <DeleteOutlined />
+                          <DeleteOutlined
+                            onClick={(e) =>
+                              removeFromWishlist(item._id, dispatch)
+                            }
+                          />
                         </DeleteProduct>
                         <FinalAmount>RS. {item.price}</FinalAmount>
+                        <Button onClick={handleAddToCart}>
+                          {cartButtonText}
+                        </Button>
                       </Price>
                     </ProductDetails>
                   </Product>

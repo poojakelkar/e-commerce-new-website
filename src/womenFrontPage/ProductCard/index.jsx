@@ -3,7 +3,7 @@ import React, { useContext, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { addToCart, removeFromCart, updateProductQty } from "../../CardService";
 import { StateContext } from "../../Context";
-import { addToWishlist, handleAddToWishlist } from "../../wishlistServices";
+import { addToWishlist } from "../../wishlistServices";
 import {
   Button,
   Card,

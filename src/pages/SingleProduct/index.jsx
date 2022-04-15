@@ -1,6 +1,5 @@
-import React, { useContext, useEffect, useState } from "react";
-import { useNavigate, useParams } from "react-router-dom";
-import { StateContext } from "../../Context";
+import React, { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
 import { Announce } from "../../womenFrontPage/Announce/index";
 import { Footer } from "../../womenFrontPage/Footer/index";
 import { LastFooter } from "../../womenFrontPage/LastFooter/index";
@@ -25,10 +24,8 @@ import {
 } from "./styles";
 
 const SingleProduct = () => {
-  let navigate = useNavigate();
   const { productId } = useParams();
   const [productItem, setProductItem] = useState({});
-  const { state, dispatch } = useContext(StateContext);
 
   useEffect(() => {
     async function fetchData() {
