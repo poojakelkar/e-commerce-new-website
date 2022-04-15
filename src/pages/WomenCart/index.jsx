@@ -1,6 +1,4 @@
 import { Link } from "react-router-dom";
-import image1 from "../../assets/whishlist1.jpeg";
-import image2 from "../../assets/whishlist2.jpeg";
 import { Announce } from "../../womenFrontPage/Announce/index";
 import { Footer } from "../../womenFrontPage/Footer/index";
 import { LastFooter } from "../../womenFrontPage/LastFooter/index";
