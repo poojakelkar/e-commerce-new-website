@@ -20,6 +20,11 @@ const Context = ({ children }) => {
     cart: [],
     wishlist: [],
     tag: null,
+    showtoast: false,
+    address: [],
+    showAddressModal: false,
+    addressEditMode: false,
+    addressToBeEdited: {},
   });
 
   return (
