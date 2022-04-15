@@ -21,10 +21,6 @@ const Context = ({ children }) => {
     wishlist: [],
     tag: null,
     showtoast: false,
-    address: [],
-    showAddressModal: false,
-    addressEditMode: false,
-    addressToBeEdited: {},
   });
 
   return (
