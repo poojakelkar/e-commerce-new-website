@@ -117,13 +117,15 @@ const WomenCart = () => {
                             </Remove>
                             <Amount>{item.quantity}</Amount>
                             <Add
-                              onClick={(e) =>
+                              onClick={(e) => {
+                                console.log("clicked abcbac");
                                 updateProductQty(
                                   item._id,
                                   dispatch,
                                   "INCREMENT_QUANTITY"
-                                )
-                              }
+                                );
+                                e.stopPropogation();
+                              }}
                             >
                               +
                             </Add>

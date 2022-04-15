@@ -113,9 +113,9 @@ const stateReducer = (state, action) => {
           item.address_id === action.payload.address_id ? action.payload : item
         ),
       };
-    case "INCREMENT_QUANTITY":
+    case "INCREMENT_QUANTITY": {
       const clonedState = { ...state };
-      let cartData = clonedState?.cart;
+      let cartData = [...clonedState?.cart];
       if (cartData?.length) {
         const productIndex = cartData?.findIndex(
           (item) => item?._id === action?.payload
@@ -132,24 +132,54 @@ const stateReducer = (state, action) => {
         clonedState.cart = [...cartData];
       }
       return { ...clonedState };
-
-    case "DECREMENT_QUANTITY":
+    }
+    case "DECREMENT_QUANTITY": {
       const clonedData = { ...state };
-      if (clonedData?.cart?.length) {
-        const productIndex = clonedData?.cart?.findIndex(
+      let cartData = [...clonedData?.cart];
+      if (cartData?.length) {
+        const productIndex = cartData?.findIndex(
           (item) => item?._id === action?.payload
         );
         if (productIndex > -1) {
-          const currentQty = clonedData?.cart[productIndex]?.quantity ?? 0;
+          const currentQty = cartData[productIndex]?.quantity ?? 0;
           const newQty = currentQty > 1 ? currentQty - 1 : currentQty;
           console.log({ newQty });
-          clonedData.cart[productIndex] = {
-            ...clonedData?.cart[productIndex],
+          cartData[productIndex] = {
+            ...cartData[productIndex],
             quantity: newQty,
           };
         }
       }
+      clonedData.cart = [...cartData];
       return { ...clonedData };
+    }
+    case "MOVE_TO_CART_FROM_WISHLIST": {
+      const stateCopy = { ...state };
+      if (stateCopy?.wishlist?.length) {
+        const productIndex = stateCopy?.wishlist?.findIndex(
+          (item) => item?._id === action?.payload
+        );
+        if (productIndex > -1) {
+          const product = stateCopy?.wishlist[productIndex];
+          const newWishlist = stateCopy?.wishlist?.filter(
+            (wl) => wl?._id !== product?._id
+          );
+          stateCopy.wishlist = [...newWishlist];
+          const productInCartIndex = stateCopy?.cart?.findIndex(
+            (item) => item?._id === action?.payload
+          );
+          if (productInCartIndex > -1) {
+            stateCopy.cart[productInCartIndex] = {
+              ...stateCopy.cart[productInCartIndex],
+              quantity: stateCopy.cart[productInCartIndex].quantity + 1,
+            };
+          } else {
+            stateCopy.cart.push({ ...product, quantity: 1 });
+          }
+        }
+      }
+      return { ...stateCopy };
+    }
     default:
       return state;
   }

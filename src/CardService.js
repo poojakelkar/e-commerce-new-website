@@ -9,6 +9,7 @@ export const addToCart = (item, dispatch) => {
 
 export const updateProductQty = async (id, dispatch, actionType) => {
   try {
+    console.log("clicked abcbac 1");
     dispatch({ type: actionType, payload: id });
   } catch (error) {
     console.log("Error in updateQtyFromCart service", error);

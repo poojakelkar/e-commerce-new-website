@@ -1,6 +1,8 @@
 import { DeleteOutlined, Star } from "@material-ui/icons";
 import React, { useContext, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
+import { StateContext } from "../../Context";
+import { removeFromWishlist } from "../../wishlistServices";
 import { Announce } from "../../womenFrontPage/Announce/index";
 import { Footer } from "../../womenFrontPage/Footer/index";
 import { LastFooter } from "../../womenFrontPage/LastFooter/index";
@@ -28,28 +30,13 @@ import {
   TopText,
   Wrapper,
 } from "./styles";
-import { StateContext } from "../../Context";
-import { removeFromWishlist } from "../../wishlistServices";
-import { addToCart, updateProductQty } from "../../CardService";
 
-const Wishlist = ({ item }) => {
+const Wishlist = () => {
   const { state, dispatch } = useContext(StateContext);
   let navigate = useNavigate();
-  const [cartButtonText, setCartButtonText] = useState("ADD TO CART");
-  const handleAddToCart = (e) => {
-    const isItemPresent = state.cart.find(
-      (itemInCart) => itemInCart._id === item._id
-    );
-    if (cartButtonText === "ADD TO CART") {
-      if (!isItemPresent) {
-        addToCart(item, dispatch);
-        setCartButtonText("GO TO CART");
-        updateProductQty(item._id, dispatch, "increment");
-        setCartButtonText("GO TO CART");
-      }
-    } else {
-      navigate("/cart");
-    }
+  const handleAddToCart = (item) => {
+    dispatch({ type: "MOVE_TO_CART_FROM_WISHLIST", payload: item._id });
+    navigate("/cart");
   };
   return (
     <Container>
@@ -109,8 +96,8 @@ const Wishlist = ({ item }) => {
                           />
                         </DeleteProduct>
                         <FinalAmount>RS. {item.price}</FinalAmount>
-                        <Button onClick={handleAddToCart}>
-                          {cartButtonText}
+                        <Button onClick={() => handleAddToCart(item)}>
+                          Add To Cart
                         </Button>
                       </Price>
                     </ProductDetails>
