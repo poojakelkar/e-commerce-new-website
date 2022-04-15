@@ -26,7 +26,7 @@ function App() {
       }
     }
     fetchData();
-  }, [state, dispatch]);
+  }, []);
 
   return (
     <>
@@ -39,7 +39,7 @@ function App() {
         <Route path="/product/:productId" element={<SingleProduct />} />
         <Route path="/forgot-password" element={<Forget />} />
         <Route path="/cart" element={<WomenCart />} />
-        <Route path="/wishlist" element={<Wishlist />} />
+        <Route path="wishlist" element={<Wishlist />} />
       </Routes>
       <ToastContainer />
     </>
