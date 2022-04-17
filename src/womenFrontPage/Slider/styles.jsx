@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { mobile } from "../../responsive";
 
 export const FilterSidebar = styled.div`
   background-color: var(--white);

@@ -13,6 +13,7 @@ import {
   Wrapper,
 } from "./styles";
 import { toast } from "react-toastify";
+import { VisibilityOff } from "@material-ui/icons";
 
 const Login = () => {
   const navigate = useNavigate();
@@ -27,6 +28,11 @@ const Login = () => {
     } else {
       toast.error("Incorrect Username or Password");
     }
+  };
+
+  const [passwordShown, setPasswordShown] = useState(false);
+  const togglePassword = () => {
+    setPasswordShown(!passwordShown);
   };
   return (
     <Container>
@@ -43,7 +49,9 @@ const Login = () => {
               });
             }}
           ></Input>
+
           <Input
+            type={passwordShown ? "text" : "password"}
             placeholder="pooja@123"
             onChange={(event) => {
               const value = event.target.value;
@@ -53,6 +61,12 @@ const Login = () => {
               });
             }}
           ></Input>
+          <VisibilityOff
+            style={{ marginTop: "1.5rem" }}
+            onClick={togglePassword}
+            className="visibility"
+          ></VisibilityOff>
+
           <RememberContainer>
             <Checkbox />
             REMEMBER ME!
@@ -68,7 +82,7 @@ const Login = () => {
 
           <Button onClick={loginUser}>LOGIN</Button>
           <Link
-            to="/forget-password"
+            to="/forgot-password"
             style={{ textDecoration: "none", color: "teal" }}
           >
             <LinkForget>FORGET PASSWORD</LinkForget>

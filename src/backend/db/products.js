@@ -1,5 +1,15 @@
 import { v4 as uuid } from "uuid";
-
+import dress1 from "../../assets/image.jpeg";
+import dress2 from "../../assets/image1.jpeg";
+import dress3 from "../../assets/image2.jpeg";
+import dress4 from "../../assets/img2.jpeg";
+import shoes1 from "../../assets/shoes1.jpeg";
+import dress5 from "../../assets/image3.jpeg";
+import bag1 from "../../assets/bag1.jpeg";
+import makeup1 from "../../assets/makeup1.jpeg";
+import makeup2 from "../../assets/makeup2.jpeg";
+import makeup3 from "../../assets/makeup3.jpeg";
+import hygiene from "../../assets/hygiene.jpeg";
 /**
  * Product Database can be added here.
  * You can add products of your wish with different attributes
@@ -12,10 +22,12 @@ export const products = [
     subTitle: "Dress",
     price: 7699,
     categoryName: "Women-Wear",
-    image:
-      "https://images.pexels.com/photos/985635/pexels-photo-985635.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+    image: dress1,
     upcoming: true,
     rating: 5,
+    quantity: 0,
+    avalQty: 10,
+    color: "red",
   },
   {
     _id: uuid(),
@@ -23,99 +35,112 @@ export const products = [
     subTitle: "dress",
     price: 3199,
     categoryName: "Women-Wear",
-    image:
-      "https://images.pexels.com/photos/1055691/pexels-photo-1055691.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+    image: dress2,
     upcoming: true,
     rating: 5,
+    quantity: 0,
+    avalQty: 10,
+    color: "pink",
   },
   {
     _id: uuid(),
     title: "Floral Dress",
     price: 2600,
     categoryName: "Women-Wear",
-    image:
-      "https://images.pexels.com/photos/2065195/pexels-photo-2065195.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+    image: dress3,
     upcoming: false,
     rating: 4,
+    quantity: 0,
+    avalQty: 10,
+    color: "yellow",
   },
   {
     _id: uuid(),
     title: "Dress",
     price: 2000,
     categoryName: "Women-Wear",
-    image:
-      "https://images.pexels.com/photos/2235071/pexels-photo-2235071.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+    image: dress5,
     upcoming: true,
     rating: 4,
+    quantity: 0,
+    avalQty: 10,
+    color: "blue",
   },
   {
     _id: uuid(),
     title: "Sandal",
     price: 8299,
     categoryName: "Shoes",
-    image:
-      "https://images.pexels.com/photos/336372/pexels-photo-336372.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+    image: shoes1,
     upcoming: true,
     rating: 5,
+    quantity: 0,
+    avalQty: 10,
   },
   {
     _id: uuid(),
     title: "Bag",
     price: 20199,
     categoryName: "Bag",
-    image:
-      "https://images.pexels.com/photos/7319116/pexels-photo-7319116.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load",
+    image: bag1,
     upcoming: true,
     rating: 3.5,
+    quantity: 0,
+    avalQty: 10,
   },
   {
     _id: uuid(),
     title: "T-Shirts",
     price: 18999,
     categoryName: "Women-Wear",
-    image:
-      "https://images.pexels.com/photos/1852382/pexels-photo-1852382.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+    image: dress4,
     upcoming: true,
     rating: 3,
+    quantity: 0,
+    avalQty: 10,
   },
   {
     _id: uuid(),
     title: "Lipsticks",
     price: 25499,
     categoryName: "Makeup",
-    image:
-      "https://images.pexels.com/photos/301367/pexels-photo-301367.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+    image: makeup3,
     upcoming: true,
     rating: 2,
+    quantity: 0,
+    avalQty: 10,
   },
   {
     _id: uuid(),
     title: "Brown Lipsticks",
     price: 28599,
     categoryName: "Makeup",
-    image:
-      "https://images.pexels.com/photos/4699180/pexels-photo-4699180.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+    image: makeup1,
     upcoming: false,
     rating: 1,
+    quantity: 0,
+    avalQty: 10,
   },
   {
     _id: uuid(),
     title: "Makeup Brush",
     price: 26999,
     categoryName: "Makeup",
-    image:
-      "https://images.pexels.com/photos/3018845/pexels-photo-3018845.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+    image: makeup2,
     upcoming: false,
     rating: 3,
+    quantity: 0,
+    avalQty: 10,
   },
   {
     _id: uuid(),
     title: "Women Hygiene",
     price: 5800,
     categoryName: "Hygiene",
-    image:
-      "https://images.pexels.com/photos/5218033/pexels-photo-5218033.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+    image: hygiene,
     upcoming: false,
     rating: 4,
+    quantity: 0,
+    avalQty: 10,
   },
 ];
