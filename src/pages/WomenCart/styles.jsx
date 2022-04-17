@@ -41,7 +41,7 @@ export const TopText = styled.span`
 `;
 export const Bottom = styled.div`
   display: flex;
-  justify-content: space-between;
+  flex: 1;
   ${mobile({ flexDirection: "column" })}
 `;
 export const Text = styled.div`
@@ -55,11 +55,9 @@ export const Hr = styled.hr`
 
 export const Product = styled.div`
   display: flex;
-  justify-content: space-between;
   ${mobile({ flexDirection: "column" })}
 `;
 export const ProductDetails = styled.div`
-  flex: 2;
   display: flex;
 `;
 export const ProductImage = styled.img`
@@ -70,7 +68,7 @@ export const ProductImage = styled.img`
   ${mobile({ width: "11rem", height: "5rem", marginTop: "1.5rem" })}
 `;
 export const ProductInfo = styled.div`
-  padding: 1.5rem;
+  padding: 1.5rem 0rem;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
@@ -78,20 +76,12 @@ export const ProductInfo = styled.div`
 export const Name = styled.span`
   ${mobile({ fontSize: "0.7rem" })}
 `;
-export const Id = styled.span`
-  ${mobile({ fontSize: "0.7rem", marginTop: " 0.5rem" })}
-`;
-export const Color = styled.div`
-  width: 1.5rem;
-  height: 1.5rem;
-  border-radius: 50%;
-  background-color: ${(props) => props.color};
+export const Color = styled.h5`
   ${mobile({ marginTop: " 0.5rem" })}
 `;
 export const Size = styled.span`
   ${mobile({ fontSize: "0.7rem", marginTop: " 0.5rem" })}
 `;
-
 export const Price = styled.div`
   flex: 1;
   display: flex;
@@ -121,6 +111,38 @@ export const FinalAmount = styled.div`
   font-weight: 500;
   ${mobile({ margin: "20px" })}
 `;
+
+export const ButtonContainer = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  margin: 1rem;
+`;
+export const AddtoWishlist = styled.button`
+  cursor: pointer;
+  padding: 0.8rem;
+  width: 100%;
+  background-color: teal;
+  color: white;
+  font-size: 1.3rem;
+  font-weight: 500;
+  letter-spacing: 1.5px;
+  border: none;
+  margin-bottom: 1rem;
+`;
+export const RemoveFromCart = styled.button`
+  cursor: pointer;
+  padding: 0.8rem;
+  width: 100%;
+  border: 2px solid black;
+  color: black;
+  font-size: 1.3rem;
+  font-weight: 500;
+  letter-spacing: 1.5px;
+  border: none;
+`;
+
 export const Summary = styled.div`
   flex: 1;
   border: 1px solid teal;

@@ -18,6 +18,23 @@ export const Top = styled.div`
   justify-content: space-between;
   padding: 1.5rem;
 `;
+export const Button = styled.button`
+  width: 14rem;
+  padding: 0.6rem 1.5rem;
+  background-color: teal;
+  border: none;
+  color: white;
+  cursor: pointer;
+  font-size: 1.4rem;
+  font-weight: 400;
+  /* display: flex;
+     */
+  z-index: 99;
+
+  &:hover {
+    background-color: #66b2b2;
+  }
+`;
 export const ShoppingButton = styled.button`
   padding: 1.5rem;
   font-size: 1rem;
@@ -116,16 +133,19 @@ export const AmountContainer = styled.div`
   font-size: 1.5rem;
   ${mobile({ margin: "5px 15px", fontSize: "1rem" })}
 `;
-export const Add = styled.div`
-  cursor: pointer;
+
+export const Category = styled.div`
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  font-size: 1rem;
 `;
+
 export const Amount = styled.div`
   margin: 0.8rem;
   font-weight: 500;
 `;
-export const Remove = styled.div`
-  cursor: pointer;
-`;
+
 export const FinalAmount = styled.div`
   font-size: 1.7rem;
   font-weight: 500;

@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { mobile } from "../../responsive";
 
 export const SideContainer = styled.div`
   display: grid;
@@ -66,6 +67,7 @@ export const Button = styled.button`
   font-weight: 400;
   /* display: flex;
      */
+  z-index: 99;
 
   &:hover {
     background-color: #66b2b2;

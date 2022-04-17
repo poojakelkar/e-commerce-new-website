@@ -1,19 +1,21 @@
-import { DeleteOutlined } from "@material-ui/icons";
-import React from "react";
-import { Link } from "react-router-dom";
+import { DeleteOutlined, Star } from "@material-ui/icons";
+import React, { useContext, useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import { StateContext } from "../../Context";
+import { removeFromWishlist } from "../../wishlistServices";
 import { Announce } from "../../womenFrontPage/Announce/index";
 import { Footer } from "../../womenFrontPage/Footer/index";
 import { LastFooter } from "../../womenFrontPage/LastFooter/index";
 import { Nav } from "../../womenFrontPage/Nav/index";
 import {
   Bottom,
-  Color,
+  Button,
+  Category,
   Container,
   DeleteProduct,
   FinalAmount,
   Heading,
   Hr,
-  Id,
   Name,
   Price,
   Product,
@@ -30,6 +32,12 @@ import {
 } from "./styles";
 
 const Wishlist = () => {
+  const { state, dispatch } = useContext(StateContext);
+  let navigate = useNavigate();
+  const handleAddToCart = (item) => {
+    dispatch({ type: "MOVE_TO_CART_FROM_WISHLIST", payload: item._id });
+    navigate("/cart");
+  };
   return (
     <Container>
       <Announce></Announce>
@@ -44,9 +52,9 @@ const Wishlist = () => {
           </Link>
           <TopHeading>
             <Link to="/cart" style={{ textDecoration: "none" }}>
-              <TopText>Shopping Bag(2)</TopText>
+              <TopText>Shopping Bag({state.cart.length})</TopText>
             </Link>
-            <TopText>Your Wishlist(1)</TopText>
+            <TopText>Your Wishlist({state.wishlist.length})</TopText>
           </TopHeading>
           <Link to="/cart">
             <ShoppingButton type="filled">CHECKOUT NOW</ShoppingButton>
@@ -55,29 +63,48 @@ const Wishlist = () => {
 
         <Bottom>
           <Text>
-            <Product>
-              <ProductDetails>
-                <ProductImage src="https://images.pexels.com/photos/1839904/pexels-photo-1839904.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"></ProductImage>
-                <ProductInfo>
-                  <Name>
-                    <b>Product: </b>JUMPSUIT FOR WOMEN
-                  </Name>
-                  <Id>
-                    <b>Product: </b>11022
-                  </Id>
-                  <Color color="pink" />
-                  <Size>
-                    <b>Product: </b>32.5
-                  </Size>
-                </ProductInfo>
-              </ProductDetails>
-              <Price>
-                <DeleteProduct>
-                  <DeleteOutlined />
-                </DeleteProduct>
-                <FinalAmount>RS. 1600</FinalAmount>
-              </Price>
-            </Product>
+            {" "}
+            {state.wishlist.length === 0 ? (
+              <>
+                <h4>Your wishlist is empty!</h4>
+              </>
+            ) : (
+              <>
+                {state.wishlist.map((item) => (
+                  <Product>
+                    <ProductDetails>
+                      <ProductImage src={item.image}></ProductImage>
+                      <ProductInfo>
+                        <Name>
+                          <b>Product: </b>
+                          {item.title}
+                        </Name>
+                        <Size>
+                          <b>Product: </b>32.5
+                        </Size>
+                        <Category>
+                          Product Ratings: <Star style={{ color: "orange" }} />
+                          {item.rating}
+                        </Category>
+                      </ProductInfo>
+                      <Price>
+                        <DeleteProduct>
+                          <DeleteOutlined
+                            onClick={(e) =>
+                              removeFromWishlist(item._id, dispatch)
+                            }
+                          />
+                        </DeleteProduct>
+                        <FinalAmount>RS. {item.price}</FinalAmount>
+                        <Button onClick={() => handleAddToCart(item)}>
+                          Add To Cart
+                        </Button>
+                      </Price>
+                    </ProductDetails>
+                  </Product>
+                ))}
+              </>
+            )}
             <Hr />
           </Text>
         </Bottom>
