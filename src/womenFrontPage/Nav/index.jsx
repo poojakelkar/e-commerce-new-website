@@ -31,13 +31,6 @@ export const Nav = () => {
   return (
     <Container>
       <NavComponent>
-        <Left>
-          <Lang>EN</Lang>
-          <SearchContainer>
-            <Input placeholder="Search"></Input>
-            <Search style={{ color: "grey", fontSize: 16 }}></Search>
-          </SearchContainer>
-        </Left>
         <StyledLink to="/">
           <Center>
             <Logo>WOMEN.</Logo>
