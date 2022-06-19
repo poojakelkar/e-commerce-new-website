@@ -10,7 +10,7 @@ const Context = ({ children }) => {
     products: [],
     categories: [],
     sortBy: null,
-    priceRange: 0,
+    priceRange: 10000,
     rating: 0,
     sortByFilters: {
       sortByCategory: [],

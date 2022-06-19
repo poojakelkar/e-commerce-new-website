@@ -87,11 +87,11 @@ const WomenCart = () => {
                     <Text>
                       <Product>
                         <ProductDetails>
-                          <ProductImage src={item.image}></ProductImage>
+                          <ProductImage src={item?.image}></ProductImage>
                           <ProductInfo>
                             <Name>
                               <b>Product: </b>
-                              {item.title}
+                              {item?.title}
                             </Name>
                             <Color>Available Color: {item.color}</Color>
                             <Size>
@@ -128,7 +128,7 @@ const WomenCart = () => {
                               +
                             </Add>
                           </AmountContainer>
-                          <FinalAmount>{item.price}</FinalAmount>
+                          <FinalAmount>{item?.price}</FinalAmount>
                         </Price>
                         <ButtonContainer>
                           <AddtoWishlist

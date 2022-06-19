@@ -13,7 +13,7 @@ export const FilterSidebar = styled.div`
 export const SideBar = styled.div`
   color: black;
   width: 20vw;
-  height: 150vh;
+  height: 100%;
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
@@ -52,13 +52,8 @@ export const Price = styled.p`
   padding-top: 1rem;
   margin-right: 3rem;
 `;
-export const PriceSlide = styled.input.attrs({
-  type: "range",
-  min: "1",
-  max: "100",
-  value: "10",
-})`
-  width: 60%;
+export const PriceSlide = styled.input`
+  width: 80%;
   border: 1px solid #888;
 `;
 

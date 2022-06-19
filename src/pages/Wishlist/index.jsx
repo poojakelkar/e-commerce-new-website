@@ -73,18 +73,18 @@ const Wishlist = () => {
                 {state.wishlist.map((item) => (
                   <Product>
                     <ProductDetails>
-                      <ProductImage src={item.image}></ProductImage>
+                      <ProductImage src={item?.image}></ProductImage>
                       <ProductInfo>
                         <Name>
                           <b>Product: </b>
-                          {item.title}
+                          {item?.title}
                         </Name>
                         <Size>
                           <b>Product: </b>32.5
                         </Size>
                         <Category>
                           Product Ratings: <Star style={{ color: "orange" }} />
-                          {item.rating}
+                          {item?.rating}
                         </Category>
                       </ProductInfo>
                       <Price>
@@ -95,7 +95,7 @@ const Wishlist = () => {
                             }
                           />
                         </DeleteProduct>
-                        <FinalAmount>RS. {item.price}</FinalAmount>
+                        <FinalAmount>RS. {item?.price}</FinalAmount>
                         <Button onClick={() => handleAddToCart(item)}>
                           Add To Cart
                         </Button>
