@@ -118,3 +118,17 @@ export const AddToCart = styled.button`
     background-color: #66b2b2;
   }
 `;
+
+export const AddToWishlist = styled.button`
+  background-color: teal;
+  color: white;
+  font-size: 1.3rem;
+  font-weight: 500;
+  border: none;
+  padding: 0.8rem;
+  ${mobile({ fontSize: "0.8rem" })}
+
+  &:hover {
+    background-color: #66b2b2;
+  }
+`;
