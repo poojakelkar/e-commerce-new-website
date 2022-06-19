@@ -27,7 +27,7 @@ import {
   Wrapper,
 } from "./styles";
 
-const SingleProduct = ({ item }) => {
+const SingleProduct = () => {
   const { productId } = useParams();
   const [productItem, setProductItem] = useState({});
 
@@ -52,19 +52,19 @@ const SingleProduct = ({ item }) => {
 
   const handleAddToCart = (e) => {
     const isItemPresent = state.cart.find(
-      (itemInCart) => itemInCart._id === item._id
+      (itemInCart) => itemInCart._id === productItem._id
     );
     if (cartButtonText === "ADD TO CART") {
       if (!isItemPresent) {
-        addToCart(item, dispatch);
+        addToCart(productItem, dispatch);
         setCartButtonText("GO TO CART");
       } else {
         const isItemPresentInWishList = state?.wishlist?.find(
-          (itemInWishlist) => itemInWishlist._id === item._id
+          (itemInWishlist) => itemInWishlist._id === productItem._id
         );
         if (!isItemPresentInWishList) {
-          addToWishlist(item, dispatch);
-          updateProductQty(item._id, dispatch, "increment");
+          addToWishlist(productItem, dispatch);
+          updateProductQty(productItem._id, dispatch, "increment");
         }
         setCartButtonText("GO TO CART");
       }
@@ -123,7 +123,9 @@ const SingleProduct = ({ item }) => {
             </Size>
           </Filter>
           <AddToWishlist
-            onClick={() => handleAddToWishlist(state.wishlist, item, dispatch)}
+            onClick={() =>
+              handleAddToWishlist(state.wishlist, productItem, dispatch)
+            }
           >
             Add To Wishlist
           </AddToWishlist>
