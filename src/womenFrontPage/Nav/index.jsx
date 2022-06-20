@@ -1,21 +1,17 @@
 import React, { useContext } from "react";
 
-import { Search, ShoppingCartOutlined, Favorite } from "@material-ui/icons";
+import { ShoppingCartOutlined, Favorite } from "@material-ui/icons";
 import { Badge } from "@material-ui/core";
 import { Link, useNavigate } from "react-router-dom";
 
 import {
   Center,
   Container,
-  Input,
   Item,
-  Lang,
-  Left,
   Loginbtn,
   Logo,
   NavComponent,
   Right,
-  SearchContainer,
   StyledLink,
 } from "./styles";
 import { StateContext } from "../../Context";

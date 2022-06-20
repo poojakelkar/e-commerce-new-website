@@ -22,11 +22,11 @@ function App() {
         const data = await res.json();
         dispatch({ type: "SET_PRODUCTS", payload: data.products });
       } catch (e) {
-        console.log(state);
+        console.log(e);
       }
     }
     fetchData();
-  }, []);
+  }, [dispatch]);
 
   return (
     <>
