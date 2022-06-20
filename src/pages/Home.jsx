@@ -9,7 +9,7 @@ import { Slide } from "../womenFrontPage/Slide";
 import WomenProducts from "../womenFrontPage/WomenProducts";
 
 export default function Home() {
-  const { state, dispatch } = useContext(StateContext);
+  const { dispatch } = useContext(StateContext);
 
   useEffect(() => {
     console.log("line 15");

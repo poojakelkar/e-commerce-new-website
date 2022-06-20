@@ -37,8 +37,6 @@ const getMaxPriceRange = (products) => {
 
 const Sidebar = () => {
   const { state, dispatch } = useContext(StateContext);
-  const [priceSlider, setSlider] = useState(25);
-  console.log({ priceSlider, state });
 
   const maxPriceRange = getMaxPriceRange(state?.products);
 
