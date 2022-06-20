@@ -15,7 +15,7 @@ export const Products = () => {
       {state.categories.map((item) => {
         return (
           <Container key={item._id}>
-            <Image src={item.image}></Image>
+            <Image src={item?.image}></Image>
             <Link
               to="/product-list"
               className="links"

@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const TopContainer = styled.div``;
 export const ProductPageContainer = styled.div`
   display: grid;
-  grid-template-columns: 25rem 1fr;
+  grid-template-columns: 21rem 1fr;
   grid-template-areas: "sidebar maincontent";
   overflow: hidden;
   height: 150vh;

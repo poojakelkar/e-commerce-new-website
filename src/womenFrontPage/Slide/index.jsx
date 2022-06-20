@@ -35,7 +35,7 @@ export const Slide = () => {
         {slideItem.map((item) => (
           <Sliding bg={item.bg} key={item.id}>
             <ImgSliding>
-              <Image src={item.img}></Image>
+              <Image src={item?.img}></Image>
             </ImgSliding>
             <TextSliding>
               <Heading>{item.heading}</Heading>
