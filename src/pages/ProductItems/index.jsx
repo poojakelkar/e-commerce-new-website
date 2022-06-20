@@ -9,6 +9,7 @@ import ProductCard from "../../womenFrontPage/ProductCard/index";
 import Sidebar from "../../womenFrontPage/Slider/index";
 import {
   getFilteredData,
+  getPriceRangeFilteredData,
   getRatingSortedData,
   getSortedData,
 } from "../../filteredFunction";
@@ -23,7 +24,15 @@ const ProductItems = () => {
   const topContainer = useRef();
   const { state, dispatch } = useContext(StateContext);
   const sortedData = getSortedData(state.products, state.sortBy);
-  const ratingSortedData = getRatingSortedData(sortedData, state.rating);
+  const priceRangeFilteredData = getPriceRangeFilteredData(
+    sortedData,
+    50,
+    state?.priceRange
+  );
+  const ratingSortedData = getRatingSortedData(
+    priceRangeFilteredData,
+    state.rating
+  );
   const filteredData = getFilteredData(ratingSortedData, state, dispatch);
   useEffect(() => {
     topContainer.current.scrollIntoView({ block: "end", behavior: "smooth" });

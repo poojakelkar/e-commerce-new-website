@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import { StateContext } from "../../Context";
 import {
   Category,
@@ -23,8 +23,23 @@ import {
   Title,
 } from "./styles";
 
+const getMaxPriceRange = (products) => {
+  let maxPrice = 0;
+  if (products?.length) {
+    products.forEach((item) => {
+      if (item?.price > maxPrice) {
+        maxPrice = item?.price;
+      }
+    });
+  }
+  return maxPrice;
+};
+
 const Sidebar = () => {
   const { state, dispatch } = useContext(StateContext);
+
+  const maxPriceRange = getMaxPriceRange(state?.products);
+
   return (
     <>
       <FilterSidebar>
@@ -40,14 +55,26 @@ const Sidebar = () => {
             </Clear>
           </Filter>
           <PriceSlider>
-            <Title>Price</Title>
+            <Title>Price 50 - {state?.priceRange}</Title>
             <SlideContainer>
               <PriceSliderText>
                 <Price>50</Price>
-                <Price>200</Price>
-                <Price>500</Price>
+                <Price>{parseInt(maxPriceRange / 2)}</Price>
+                <Price>{parseInt(maxPriceRange)}</Price>
               </PriceSliderText>
-              <PriceSlide></PriceSlide>
+              <PriceSlide
+                type="range"
+                name="slider"
+                min="50"
+                max={parseInt(maxPriceRange)}
+                value={state?.priceRange || 3000}
+                onChange={(e) =>
+                  dispatch({
+                    type: "SET_PRICE_RANGE",
+                    payload: Number(e.target.value),
+                  })
+                }
+              ></PriceSlide>
             </SlideContainer>
           </PriceSlider>
 
@@ -133,8 +160,8 @@ const Sidebar = () => {
             <Title>Rating</Title>
             <RadioContainer>
               <Radio
-                value={state.rating}
-                checked={state.rating && state.rating === 4}
+                value={state?.rating}
+                checked={state?.rating && state?.rating === 4}
                 type="radio"
                 onClick={(e) => dispatch({ type: "SET_RATING", payload: 4 })}
               />{" "}
@@ -142,8 +169,8 @@ const Sidebar = () => {
             </RadioContainer>
             <RadioContainer>
               <Radio
-                value={state.rating}
-                checked={state.rating && state.rating === 3}
+                value={state?.rating}
+                checked={state?.rating && state?.rating === 3}
                 type="radio"
                 onClick={(e) => dispatch({ type: "SET_RATING", payload: 3 })}
               />{" "}
@@ -151,8 +178,8 @@ const Sidebar = () => {
             </RadioContainer>
             <RadioContainer>
               <Radio
-                value={state.rating}
-                checked={state.rating && state.rating === 2}
+                value={state?.rating}
+                checked={state?.rating && state?.rating === 2}
                 type="radio"
                 onClick={(e) => dispatch({ type: "SET_RATING", payload: 2 })}
               />{" "}
@@ -160,8 +187,8 @@ const Sidebar = () => {
             </RadioContainer>
             <RadioContainer>
               <Radio
-                value={state.rating}
-                checked={state.rating && state.rating === 1}
+                value={state?.rating}
+                checked={state?.rating && state?.rating === 1}
                 type="radio"
                 onClick={(e) => dispatch({ type: "SET_RATING", payload: 1 })}
               />{" "}

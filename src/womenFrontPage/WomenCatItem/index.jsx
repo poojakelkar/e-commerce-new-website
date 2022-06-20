@@ -4,7 +4,7 @@ import { Button, Container, Heading, Image, TextHead } from "./styles";
 export const WomenCatItem = ({ item }) => {
   return (
     <Container>
-      <Image src={item.img}></Image>
+      <Image src={item?.img}></Image>
       <TextHead>
         <Heading>{item.heading}</Heading>
         <Link to="/product-list">

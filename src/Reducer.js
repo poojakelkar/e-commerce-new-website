@@ -61,7 +61,7 @@ const stateReducer = (state, action) => {
       return {
         ...state,
         sortBy: null,
-        priceRange: 0,
+        priceRange: 10000,
         rating: 0,
         sortByFilters: {
           sortByCategory: [],

@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import { mobile } from "../../responsive";
 
 export const SideContainer = styled.div`
   display: grid;
@@ -8,7 +7,7 @@ export const SideContainer = styled.div`
   overflow-y: auto;
 `;
 export const Card = styled.div`
-  width: 17rem;
+  width: 15rem;
   height: 57vh;
   margin: 0.8rem;
 `;
@@ -17,8 +16,8 @@ export const ProductImg = styled.div`
   background-color: white;
 `;
 export const Image = styled.img`
-  width: 17rem;
-  height: 20rem;
+  width: 15rem;
+  height: 15rem;
   object-fit: cover;
 `;
 export const ImgInfo = styled.div`

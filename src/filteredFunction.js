@@ -7,6 +7,16 @@ export const getSortedData = (data, sortType) => {
   return data;
 };
 
+export const getPriceRangeFilteredData = (
+  data,
+  minPriceRange = 50,
+  maxPriceRange = 3000
+) => {
+  return data.filter(
+    (item) => item?.price >= minPriceRange && item?.price <= maxPriceRange
+  );
+};
+
 export const getRatingSortedData = (data, rating) => {
   if (rating !== 0) {
     return data.filter((item) => item.rating >= rating);

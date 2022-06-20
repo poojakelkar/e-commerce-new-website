@@ -65,7 +65,7 @@ const ProductCard = ({ item }) => {
     <SideContainer>
       <Card>
         <ProductImg key={item._id}>
-          <Image src={item.image} onClick={openSingleProductPage} />
+          <Image src={item?.image} onClick={openSingleProductPage} />
           <ImgInfo>
             <ImgTitle>{item?.title}</ImgTitle>
             <CategoryName>Rs.{item?.price}</CategoryName>
