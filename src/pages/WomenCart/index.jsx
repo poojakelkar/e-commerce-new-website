@@ -3,6 +3,7 @@ import { Announce } from "../../womenFrontPage/Announce/index";
 import { Footer } from "../../womenFrontPage/Footer/index";
 import { LastFooter } from "../../womenFrontPage/LastFooter/index";
 import { Nav } from "../../womenFrontPage/Nav/index";
+import StripeCheckout from "react-stripe-checkout";
 import {
   Add,
   AddtoWishlist,
@@ -46,12 +47,29 @@ import {
   updateProductQty,
 } from "../../CardService";
 import { handleAddToWishlist } from "../../wishlistServices";
+import axios from "axios";
+import { toast } from "react-toastify";
 
 const WomenCart = () => {
   const { state, dispatch } = useContext(StateContext);
   console.log({ state });
   const totalPrice = findPriceOfAllItems(state.cart);
   const finalCartPrice = calculateFinalCartPrice(totalPrice, 500, 50);
+
+  const handleToken = async (token, addresses) => {
+    console.log("hii");
+    const response = await axios.post("http://localhost:5000/checkout", {
+      token,
+      addresses,
+    });
+
+    console.log(response);
+    if (response.status === 304) {
+      toast.success("Success! Check email for details");
+    } else {
+      toast("Something went wrong", { type: "error" });
+    }
+  };
   return (
     <>
       <Container>
@@ -156,26 +174,43 @@ const WomenCart = () => {
               })}
             </>
           )}
-          <Summary>
-            <SummaryHeading>ORDER SUMMARY</SummaryHeading>
-            <SummaryProduct>
-              <SummaryText>Subtotal</SummaryText>
-              <SummaryPrice>RS. {totalPrice}</SummaryPrice>
-            </SummaryProduct>
-            <SummaryProduct>
-              <SummaryText>Shipping Fees</SummaryText>
-              <SummaryPrice>FREE</SummaryPrice>
-            </SummaryProduct>
-            <SummaryProduct>
-              <SummaryText>Discount</SummaryText>
-              <SummaryPrice>RS. -500</SummaryPrice>
-            </SummaryProduct>
-            <SummaryProduct type="total">
-              <SummaryText>Total Amount</SummaryText>
-              <SummaryPrice>RS.{finalCartPrice}</SummaryPrice>
-            </SummaryProduct>
-            <Checkout>CHECKOUT NOW</Checkout>
-          </Summary>
+          <>
+            {" "}
+            {state.cart.map((item) => {
+              return (
+                <Summary>
+                  <SummaryHeading>ORDER SUMMARY</SummaryHeading>
+                  <SummaryProduct>
+                    <SummaryText>Subtotal</SummaryText>
+                    <SummaryPrice>RS. {totalPrice}</SummaryPrice>
+                  </SummaryProduct>
+                  <SummaryProduct>
+                    <SummaryText>Shipping Fees</SummaryText>
+                    <SummaryPrice>FREE</SummaryPrice>
+                  </SummaryProduct>
+                  <SummaryProduct>
+                    <SummaryText>Discount</SummaryText>
+                    <SummaryPrice>RS. -500</SummaryPrice>
+                  </SummaryProduct>
+                  <SummaryProduct type="total">
+                    <SummaryText>Total Amount</SummaryText>
+                    <SummaryPrice>RS.{finalCartPrice}</SummaryPrice>
+                  </SummaryProduct>
+                  <StripeCheckout
+                    stripeKey="pk_test_51LRc96SH0hJMkoICgH9fdfN8YO1j0teUgRewAICVV9WdvsQc2k9XPWURwoTpgVdivNrAVb1cqSQRST9UOh8HE6An003Qn7QdGc"
+                    token={handleToken}
+                    amount={item?.price * 90}
+                    currency="INR"
+                    name={item?.name || ""}
+                    billingAddress
+                    shippingAddress
+                  >
+                    <Checkout>CHECKOUT NOW</Checkout>
+                  </StripeCheckout>
+                </Summary>
+              );
+            })}
+          </>
         </Wrapper>
         <Footer></Footer>
         <LastFooter></LastFooter>

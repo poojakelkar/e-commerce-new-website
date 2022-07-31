@@ -56,6 +56,7 @@ export function makeServer({ environment = "development" } = {}) {
     },
 
     routes() {
+      this.passthrough("http://localhost:5000/**");
       this.namespace = "api";
       // auth routes (public)
       this.post("/auth/signup", signupHandler.bind(this));
