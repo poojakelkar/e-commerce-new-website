@@ -146,9 +146,10 @@ export const RemoveFromCart = styled.button`
 export const Summary = styled.div`
   flex: 1;
   border: 1px solid teal;
-  height: 47vh;
+  height: 55vh;
   border-radius: 0.8rem;
   padding: 1.5rem;
+  display: block;
 `;
 export const SummaryHeading = styled.h1`
   font-size: 1.6rem;
@@ -177,5 +178,6 @@ export const Checkout = styled.button`
   font-weight: 500;
   letter-spacing: 1.5px;
   border: none;
+  cursor: pointer;
   ${mobile({ fontSize: "0.8rem" })}
 `;
