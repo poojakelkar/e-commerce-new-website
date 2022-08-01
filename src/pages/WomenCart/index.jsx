@@ -57,18 +57,23 @@ const WomenCart = () => {
   const finalCartPrice = calculateFinalCartPrice(totalPrice, 500, 50);
 
   const handleToken = async (token, addresses) => {
-    console.log("hii");
-    const response = await axios.post("http://localhost:5000/checkout", {
-      token,
-      addresses,
-    });
-
-    console.log(response);
-    if (response.status === 304) {
-      toast.success("Success! Check email for details");
-    } else {
-      toast("Something went wrong", { type: "error" });
-    }
+    axios
+      .post("http://localhost:5000/checkout", {
+        token,
+        addresses,
+      })
+      .then((response) => {
+        console.log("checkot", response);
+        if (response.status === 200) {
+          toast.success("Success! Check email for details");
+        } else {
+          toast("Something went wrong", { type: "error" });
+        }
+      })
+      .catch((err) => {
+        console.log("error");
+        console.log(err);
+      });
   };
   return (
     <>
