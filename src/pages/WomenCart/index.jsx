@@ -49,32 +49,39 @@ import {
 import { handleAddToWishlist } from "../../wishlistServices";
 import axios from "axios";
 import { toast } from "react-toastify";
+import { useState } from "react";
 
 const WomenCart = () => {
   const { state, dispatch } = useContext(StateContext);
+
   console.log({ state });
   const totalPrice = findPriceOfAllItems(state.cart);
   const finalCartPrice = calculateFinalCartPrice(totalPrice, 500, 50);
 
-  const handleToken = async (token, addresses) => {
-    axios
-      .post("http://localhost:5000/checkout", {
-        token,
-        addresses,
-      })
-      .then((response) => {
-        console.log("checkot", response);
-        if (response.status === 200) {
-          toast.success("Success! Check email for details");
-        } else {
-          toast("Something went wrong", { type: "error" });
-        }
-      })
-      .catch((err) => {
-        console.log("error");
-        console.log(err);
-      });
+  const handleToken = () => {
+    toast.success("Success! Check email for details");
+    state?.cart?.forEach((item) => {
+      removeFromCart(item._id, dispatch);
+    });
   };
+  //   axios
+  //     .post("http://localhost:5000/checkout", {
+  //       token,
+  //       addresses,
+  //     })
+  //     .then((response) => {
+  //       console.log("checkot", response);
+  //       if (response.status === 200) {
+  //         toast.success("Success! Check email for details");
+  //       } else {
+  //         toast("Something went wrong", { type: "error" });
+  //       }
+  //     })
+  //     .catch((err) => {
+  //       console.log("error");
+  //       console.log(err);
+  //     });
+  // };
   return (
     <>
       <Container>
@@ -209,6 +216,7 @@ const WomenCart = () => {
                     name={item?.name || ""}
                     billingAddress
                     shippingAddress
+                    onClick={(e) => removeFromCart(item._id, dispatch)}
                   >
                     <Checkout>CHECKOUT NOW</Checkout>
                   </StripeCheckout>
